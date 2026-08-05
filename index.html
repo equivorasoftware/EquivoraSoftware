@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js preload" current-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="theme-color" content="#0061ff">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <title>EquivoraSoftware: Enterprise Software Development, Technology Consulting</title>
+
+  <!-- Gravity Forms Initialization standard hook handler -->
+  <script>
+    window.gform = window.gform || {
+      domLoaded: false,
+      scriptsLoaded: false,
+      themeScriptsLoaded: false,
+      hooks: { action: {}, filter: {} },
+      init: function() {
+        document.addEventListener("DOMContentLoaded", () => { this.domLoaded = true; });
+        document.addEventListener("gform_main_scripts_loaded", () => { this.scriptsLoaded = true; });
+        document.addEventListener("gform/theme/scripts_loaded", () => { this.themeScriptsLoaded = true; });
+      },
+      addHook: function(type, hook, callable, priority, tag) {
+        this.hooks[type] = this.hooks[type] || {};
+        this.hooks[type][hook] = this.hooks[type][hook] || [];
+        this.hooks[type][hook].push({
+          tag: tag || `${hook}_${this.hooks[type][hook].length}`,
+          callable: callable,
+          priority: priority ?? 10
+        });
+      },
+      addAction: function(hook, callable, priority, tag) { this.addHook("action", hook, callable, priority, tag); },
+      addFilter: function(hook, callable, priority, tag) { this.addHook("filter", hook, callable, priority, tag); }
+    };
+    window.gform.init();
+  </script>
+
+  <!-- Core Page Styles -->
+  <style id="wpr-usedcss">
+    *, ::after, ::before { box-sizing: border-box; }
+    html { font-size: 16px; text-size-adjust: none; -webkit-text-size-adjust: none; scroll-behavior: smooth; }
+    body { background-color: #fff; color: #1e1d28; font-family: "Proxima Nova", Arial, sans-serif; font-size: 1rem; font-weight: 400; line-height: 1.63; margin: 0; overflow-x: hidden; position: relative; }
+
+    /* Typography & Hierarchy */
+    .title { color: #1e1d28; font-size: 3.75rem; line-height: 1.17; margin: 0 0 1.5rem; }
+    .title-h1 { font-family: Signifier, serif; font-size: 32px; font-weight: 300; line-height: 1.25; margin: 0; }
+    .title-h2 { font-size: 24px; font-weight: 300; line-height: 32px; margin: 0 0 32px; }
+
+    /* Responsive Styles */
+    @media (min-width: 768px) {
+      .title-h2 { margin-bottom: 40px; }
+    }
+    @media (min-width: 1280px) {
+      html { font-size: 15px; }
+      .title-h1 { font-size: 56px; line-height: 1.1; }
+      .title-h2 { font-size: 32px; line-height: 40px; }
+    }
+    @media (min-width: 1920px) {
+      .title-h1 { font-size: 72px; }
+      .title-h2 { font-size: 48px; line-height: 56px; }
+    }
+
+    /* Layout & Utilities */
+    .container-n { margin-left: auto; margin-right: auto; max-width: 1280px; padding-left: 24px; padding-right: 24px; width: 100%; }
+    .row { display: flex; }
+    .btn-n { align-items: center; border: none; border-radius: 48px; cursor: pointer; display: inline-flex; font-size: 14px; font-weight: 700; gap: 8px; line-height: 16px; padding: 14px 28px; text-decoration: none; user-select: none; white-space: nowrap; transition: all 0.2s ease; }
+    .btn-n--black { background-color: #0061ff; color: #fff; }
+    .btn-n--black:hover { background-color: #0045e6; }
+    .btn-n--white { background-color: #fff; color: #1e1d28; }
+    .btn-n--white:hover { background-color: #f0f0f0; }
+
+    /* Nav Links */
+    .nav-links { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; align-items: center; }
+    .nav-links a { color: #1e1d28; text-decoration: none; font-size: 15px; font-weight: 500; cursor: pointer; transition: color 0.2s ease; }
+    .nav-links a:hover { color: #0061ff; }
+
+    /* Background Sections */
+    .hero-bg {
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.85), rgba(6, 182, 212, 0.8)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color: #fff;
+    }
+
+    .about-bg {
+      background: #ffffff;
+      color: #1e1d28;
+    }
+
+    .services-bg {
+      background: linear-gradient(180deg, rgba(243, 244, 246, 0.95), rgba(224, 231, 255, 0.95)), url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+
+    .portal-bg {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.95)), url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color: #fff;
+    }
+
+    .payment-bg {
+      background: linear-gradient(135deg, rgba(248, 250, 252, 0.98), rgba(238, 242, 255, 0.98)), url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color: #1e1d28;
+    }
+
+    .stats-bg {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(88, 28, 135, 0.9)), url('https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+
+    .contact-bg {
+      background: linear-gradient(135deg, rgba(238, 242, 255, 0.95), rgba(224, 242, 254, 0.95)), url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+
+    /* About Cards */
+    .about-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 28px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .about-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Dynamic Service Card Styling */
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 32px;
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .service-card:hover {
+      box-shadow: 0 12px 28px rgba(79, 70, 229, 0.12);
+    }
+    .service-card .arrow-link {
+      margin-top: 16px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s ease;
+    }
+    .service-card .arrow-link:hover {
+      gap: 10px;
+    }
+    .expanded-content {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+      margin-top: 0;
+      border-top: 0px solid #e2e8f0;
+    }
+    .service-card.expanded .expanded-content {
+      max-height: 600px;
+      opacity: 1;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid #e2e8f0;
+    }
+    .expanded-content ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      color: #334155;
+      font-size: 0.9rem;
+    }
+    .expanded-content li {
+      margin-bottom: 6px;
+    }
+
+    /* Portal File Dropzone */
+    .dropzone {
+      border: 2px dashed #3b82f6;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 36px 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .dropzone:hover, .dropzone.dragover {
+      background: rgba(59, 130, 246, 0.1);
+      border-color: #60a5fa;
+    }
+
+    /* Payment Portal Tab Switching & Form Inputs */
+    .payment-tab-btn {
+      flex: 1;
+      padding: 12px;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #475569;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+    .payment-tab-btn.active {
+      background: #0061ff;
+      color: #fff;
+      border-color: #0061ff;
+    }
+    .payment-input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      background: #fff;
+      color: #1e1d28;
+      transition: border-color 0.2s ease;
+    }
+    .payment-input:focus {
+      outline: none;
+      border-color: #0061ff;
+      box-shadow: 0 0 0 3px rgba(0, 97, 255, 0.15);
+    }
+
+    /* Interactive Accordion (FAQ) */
+    .faq-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .faq-item.active {
+      border-color: #0061ff;
+      box-shadow: 0 4px 12px rgba(0, 97, 255, 0.08);
+    }
+    .faq-header {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 18px 24px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1e1d28;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .faq-header:hover {
+      background-color: #f1f5f9;
+      color: #0061ff;
+    }
+    .faq-icon {
+      font-size: 1.4rem;
+      color: #0061ff;
+      font-weight: 400;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+      padding: 0 24px;
+    }
+    .faq-item.active .faq-content {
+      max-height: 500px;
+      padding: 0 24px 20px 24px;
+    }
+    .faq-content p {
+      margin: 0;
+      color: #54575e;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header & Navigation -->
+<header class="header" style="border-bottom: 1px solid #eee; position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); z-index: 100;">
+  <div class="container-n row" style="justify-content: space-between; align-items: center; padding-top: 20px; padding-bottom: 20px;">
+    <div class="logo">
+      <!-- Updated link to target the #about section -->
+      <a href="#about" style="font-weight: 700; font-size: 1.5rem; text-decoration: none; color: #1e1d28;">
+        Equivora<span style="color: #0061ff;">Software</span>
+      </a>
+    </div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portal">Document Vault</a></li>
+        <li><a href="#payment-portal">Payments</a></li>
+        <li><a href="#stats">Impact</a></li>
+        <li><a href="#testimonials">Clients</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact" class="btn-n btn-n--black" style="padding: 10px 20px;">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section class="section hero-bg" style="padding: 120px 0 100px;">
+    <div class="container-n" style="max-width: 900px; text-align: center;">
+      <h1 class="title-h1" style="color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">Enterprise Software Development &amp; Tech Consulting</h1>
+      <p class="description" style="font-size: 1.2rem; color: #f1f5f9; margin: 24px 0 36px;">
+        We design, build, and scale custom enterprise software solutions and digital platforms tailored for dynamic modern business ecosystems.
+      </p>
+      <div style="display: flex; gap: 16px; justify-content: center;">
+        <a href="#contact" class="btn-n btn-n--black" style="box-shadow: 0 4px 14px rgba(0, 97, 255, 0.4);">Schedule Consultation</a>
+        <a href="#services" class="btn-n btn-n--white" style="box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);">Explore Capabilities</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about-bg" style="padding: 80px 0;">
+    <div class="container-n">
+      <div style="text-align: center; margin-bottom: 48px;">
+        <span style="background: rgba(0, 97, 255, 0.1); color: #0061ff; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Who We Are</span>
+        <h2 class="title-h2" style="color: #1e1d28; margin-top: 12px;">About EquivoraSoftware</h2>
+        <p style="color: #4b5563; max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.7;">
+          EquivoraSoftware is a full-cycle software consultancy and enterprise engineering partner. We specialize in transforming complex business challenges into reliable, high-performance software products that scale alongside your organization.
+        </p>
+      </div>
+
+      <!-- Mission Statement Banner -->
+      <div style="background: linear-gradient(135deg, #0f172a, #1e293b); color: #fff; padding: 40px; border-radius: 16px; text-align: center; margin-bottom: 48px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+        <h3 style="color: #38bdf8; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0;">Our Mission Statement</h3>
+        <blockquote style="font-size: 1.35rem; font-style: italic; font-weight: 300; margin: 0; line-height: 1.6;">
+          "To empower ambitious organizations globally through resilient, cloud-native software engineering—delivering continuous value, operational efficiency, and scalable technological advantages."
+        </blockquote>
+      </div>
+
+      <!-- Business Breakdown Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 48px;">
+
+        <!-- Target Audience -->
+        <div class="about-card">
+          <div style="font-size: 2rem; margin-bottom: 12px;">🎯</div>
+          <h3 style="margin-top: 0; color: #0f172a; font-size: 1.25rem;">Target Audience</h3>
+          <p style="color: #4b5563; font-size: 0.95rem; margin-bottom: 12px;">
+            We engineer tailored systems for growth-oriented businesses that rely on critical digital infrastructures:
+          </p>
+          <ul style="color: #4b5563; padding-left: 20px; font-size: 0.9rem; margin-bottom: 0;">
+            <li style="margin-bottom: 6px;">FinTech &amp; Financial Institutions</li>
+            <li style="margin-bottom: 6px;">Healthcare &amp; Life Sciences</li>
+            <li style="margin-bottom: 6px;">High-Growth SaaS &amp; Scale-ups</li>
+            <li>Logistics &amp; Supply Chain Networks</li>
+          </ul>
+        </div>
+
+        <!-- Team Structure -->
+        <div class="about-card">
+          <div style="font-size: 2rem; margin-bottom: 12px;">👥</div>
+          <h3 style="margin-top: 0; color: #0f172a; font-size: 1.25rem;">Our Team</h3>
+          <p style="color: #4b5563; font-size: 0.95rem; margin-bottom: 12px;">
+            Our dedicated, cross-functional engineering pods seamlessly integrate into your existing workflows:
+          </p>
+          <ul style="color: #4b5563; padding-left: 20px; font-size: 0.9rem; margin-bottom: 0;">
+            <li style="margin-bottom: 6px;">Senior Cloud &amp; DevOps Engineers</li>
+            <li style="margin-bottom: 6px;">Full-Stack &amp; Microservices Architects</li>
+            <li style="margin-bottom: 6px;">Data Engineers &amp; AI Implementers</li>
+            <li>Agile Project Managers &amp; UI/UX Specialists</li>
+          </ul>
+        </div>
+
+        <!-- Values -->
+        <div class="about-card">
+          <div style="font-size: 2rem; margin-bottom: 12px;">💎</div>
+          <h3 style="margin-top: 0; color: #0f172a; font-size: 1.25rem;">Core Values</h3>
+          <ul style="color: #4b5563; padding-left: 20px; font-size: 0.9rem; margin-bottom: 0;">
+            <li style="margin-bottom: 8px;"><strong>Engineering Rigor:</strong> Clean, tested, and maintainable software standards.</li>
+            <li style="margin-bottom: 8px;"><strong>Transparency:</strong> Clear timelines, open repositories, and continuous feedback.</li>
+            <li style="margin-bottom: 8px;"><strong>Pragmatic AI:</strong> Applying intelligent models to solve high-ROI operational bottlenecks.</li>
+            <li><strong>Security First:</strong> Embedded compliance and zero-trust security practices.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Achievements Showcase -->
+      <div style="background: #f1f5f9; border-radius: 12px; padding: 36px 24px; border: 1px solid #cbd5e1;">
+        <h3 style="text-align: center; margin-top: 0; color: #0f172a; margin-bottom: 28px; font-size: 1.2rem;">Proven Achievements &amp; Track Record</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; text-align: center;">
+          <div>
+            <div style="font-size: 2rem; font-weight: 700; color: #0061ff;">150+</div>
+            <div style="font-size: 0.85rem; color: #475569; font-weight: 600; margin-top: 4px;">Custom Systems Built</div>
+          </div>
+          <div>
+            <div style="font-size: 2rem; font-weight: 700; color: #0061ff;">98%</div>
+            <div style="font-size: 0.85rem; color: #475569; font-weight: 600; margin-top: 4px;">On-Time Sprint Completion</div>
+          </div>
+          <div>
+            <div style="font-size: 2rem; font-weight: 700; color: #0061ff;">ISO 27001</div>
+            <div style="font-size: 0.85rem; color: #475569; font-weight: 600; margin-top: 4px;">Certified Compliance</div>
+          </div>
+          <div>
+            <div style="font-size: 2rem; font-weight: 700; color: #0061ff;">35% Avg.</div>
+            <div style="font-size: 0.85rem; color: #475569; font-weight: 600; margin-top: 4px;">Infrastructure Cost Savings</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Core Services Section -->
+  <section id="services" class="services-bg" style="padding: 80px 0;">
+    <div class="container-n">
+      <h2 class="title-h2" style="text-align: center; color: #1e1b4b;">Our Core Capabilities</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+
+        <!-- Card 1 -->
+        <div class="service-card" style="border-top: 4px solid #6366f1;">
+          <div>
+            <h3 style="margin-top: 0; color: #312e81;">Custom Enterprise Software</h3>
+            <p style="color: #4b5563; margin: 0;">Scalable, resilient architectures designed to streamline complex business operations and operational workflows.</p>
+
+            <div class="expanded-content">
+              <strong style="color: #312e81; font-size: 0.95rem;">Key Offerings &amp; Architecture:</strong>
+              <ul>
+                <li>Microservices &amp; Event-Driven Systems</li>
+                <li>Legacy Code Base Modernization</li>
+                <li>Custom ERP &amp; CRM Platform Development</li>
+                <li>High-Throughput API Gateway Integration</li>
+              </ul>
+            </div>
+          </div>
+          <button type="button" class="arrow-link toggle-btn" style="color: #6366f1;">
+            <span class="btn-text">Learn More</span> <span>&rarr;</span>
+          </button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="service-card" style="border-top: 4px solid #06b6d4;">
+          <div>
+            <h3 style="margin-top: 0; color: #083344;">Cloud &amp; DevOps Engineering</h3>
+            <p style="color: #4b5563; margin: 0;">Modernize legacy systems with automated CI/CD pipelines, containerization, and multi-cloud setups.</p>
+
+            <div class="expanded-content">
+              <strong style="color: #083344; font-size: 0.95rem;">Cloud Infrastructure Stack:</strong>
+              <ul>
+                <li>AWS, Azure &amp; GCP Managed Migrations</li>
+                <li>Kubernetes (EKS/GKE) Orchestration</li>
+                <li>Terraform Infrastructure as Code (IaC)</li>
+                <li>Zero-Downtime Deployment Strategies</li>
+              </ul>
+            </div>
+          </div>
+          <button type="button" class="arrow-link toggle-btn" style="color: #06b6d4;">
+            <span class="btn-text">Learn More</span> <span>&rarr;</span>
+          </button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="service-card" style="border-top: 4px solid #8b5cf6;">
+          <div>
+            <h3 style="margin-top: 0; color: #4c1d95;">AI &amp; Data Engineering</h3>
+            <p style="color: #4b5563; margin: 0;">Turn operational data into actionable intelligence through custom machine learning models and data pipelines.</p>
+
+            <div class="expanded-content">
+              <strong style="color: #4c1d95; font-size: 0.95rem;">Capabilities &amp; Analytics:</strong>
+              <ul>
+                <li>Predictive Analytics &amp; Forecasting Models</li>
+                <li>LLM Integration &amp; Enterprise RAG Systems</li>
+                <li>Real-Time Streaming ETL (Apache Kafka/Spark)</li>
+                <li>Data Lakehouse Architecture &amp; Governance</li>
+              </ul>
+            </div>
+          </div>
+          <button type="button" class="arrow-link toggle-btn" style="color: #8b5cf6;">
+            <span class="btn-text">Learn More</span> <span>&rarr;</span>
+          </button>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="service-card" style="border-top: 4px solid #ec4899;">
+          <div>
+            <h3 style="margin-top: 0; color: #831843;">Cybersecurity &amp; Compliance</h3>
+            <p style="color: #4b5563; margin: 0;">Ensure enterprise-grade protection with end-to-end security audits, encryption, and regulatory compliance.</p>
+
+            <div class="expanded-content">
+              <strong style="color: #831843; font-size: 0.95rem;">Security Standards:</strong>
+              <ul>
+                <li>SOC2, ISO27001, &amp; HIPAA Compliance</li>
+                <li>Automated Penetration Testing &amp; Auditing</li>
+                <li>Zero-Trust Network Access (ZTNA)</li>
+                <li>End-to-End Encryption at Rest &amp; Transit</li>
+              </ul>
+            </div>
+          </div>
+          <button type="button" class="arrow-link toggle-btn" style="color: #ec4899;">
+            <span class="btn-text">Learn More</span> <span>&rarr;</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Portal Section: Secure Document Vault -->
+  <section id="portal" class="portal-bg" style="padding: 80px 0;">
+    <div class="container-n" style="max-width: 800px;">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <span style="background: rgba(59, 130, 246, 0.2); color: #60a5fa; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Client Vault</span>
+        <h2 class="title-h2" style="color: #fff; margin-top: 16px;">Confidential Document Submission</h2>
+        <p style="color: #94a3b8; margin: 0 auto; max-width: 600px;">Upload project specifications, NDAs, or technical requirements. Files are encrypted with 256-bit AES before transit and storage.</p>
+      </div>
+
+      <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid #334155; border-radius: 16px; padding: 32px; backdrop-filter: blur(12px);">
+        <form id="portalUploadForm">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+            <div>
+              <label style="display: block; color: #cbd5e1; font-size: 0.875rem; font-weight: 600; margin-bottom: 6px;">Client / Organization Name</label>
+              <input type="text" placeholder="Acme Corp" required style="width: 100%; padding: 12px; background: rgba(15, 23, 42, 0.6); border: 1px solid #475569; border-radius: 8px; color: #fff; font-size: 0.95rem;">
+            </div>
+            <div>
+              <label style="display: block; color: #cbd5e1; font-size: 0.875rem; font-weight: 600; margin-bottom: 6px;">Project Access Key / Email</label>
+              <input type="email" placeholder="client@company.com" required style="width: 100%; padding: 12px; background: rgba(15, 23, 42, 0.6); border: 1px solid #475569; border-radius: 8px; color: #fff; font-size: 0.95rem;">
+            </div>
+          </div>
+
+          <!-- Drag and Drop Zone -->
+          <div class="dropzone" id="dropzone">
+            <svg style="width: 48px; height: 48px; fill: none; stroke: #3b82f6; stroke-width: 2; margin-bottom: 12px;" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+            </svg>
+            <p style="margin: 0; color: #f1f5f9; font-size: 1.05rem; font-weight: 600;">Drag &amp; drop confidential files here</p>
+            <p style="margin: 6px 0 16px; color: #64748b; font-size: 0.875rem;">Supports PDF, DOCX, ZIP, CAD, and Architecture diagrams (Up to 200MB)</p>
+            <input type="file" id="portalFileInput" multiple style="display: none;">
+            <button type="button" onclick="document.getElementById('portalFileInput').click();" class="btn-n btn-n--white" style="font-size: 13px; padding: 10px 20px;">Browse Files</button>
+          </div>
+
+          <!-- File List Preview Container -->
+          <div id="fileListContainer" style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px;"></div>
+
+          <div style="margin-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div style="display: flex; align-items: center; gap: 8px; color: #10b981; font-size: 0.85rem;">
+              <svg style="width: 18px; height: 18px; fill: currentColor;" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>AES-256 Encrypted Transmissions &bull; SOC2 Certified Storage</span>
+            </div>
+            <button type="submit" class="btn-n btn-n--black" style="padding: 14px 28px; background: #3b82f6;">Upload Securely</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment Portal -->
+  <section id="payment-portal" class="payment-bg" style="padding: 80px 0;">
+    <div class="container-n" style="max-width: 900px;">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <span style="background: rgba(0, 97, 255, 0.1); color: #0061ff; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Financial Portal</span>
+        <h2 class="title-h2" style="color: #1e1d28; margin-top: 16px;">Make an Online Payment</h2>
+        <p style="color: #64748b; margin: 0 auto; max-width: 600px;">Pay retainers, project milestones, or outstanding invoices securely via Card or ACH Transfer.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; background: #fff; padding: 36px; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" id="paymentGrid">
+
+        <!-- Left Side: Invoice Details -->
+        <div>
+          <h3 style="margin-top: 0; font-size: 1.25rem; color: #0f172a;">Invoice Information</h3>
+          <form id="invoiceLookupForm" onsubmit="event.preventDefault(); handleInvoiceSearch();" style="display: flex; flex-direction: column; gap: 16px;">
+            <div>
+              <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Invoice / Retainer ID</label>
+              <input type="text" id="invoiceId" placeholder="INV-2026-8891" required class="payment-input">
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Client Email</label>
+              <input type="email" placeholder="billing@company.com" required class="payment-input">
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Payment Amount ($ USD)</label>
+              <input type="number" id="payAmount" placeholder="5000.00" min="1" step="0.01" required class="payment-input" oninput="updatePaymentTotal()">
+            </div>
+          </form>
+
+          <!-- Summary Box -->
+          <div style="margin-top: 24px; padding: 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #64748b; margin-bottom: 8px;">
+              <span>Subtotal:</span>
+              <span id="summarySubtotal">$0.00</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #64748b; margin-bottom: 8px;">
+              <span>Processing Fee (0%):</span>
+              <span>$0.00</span>
+            </div>
+            <hr style="border: none; border-top: 1px dashed #cbd5e1; margin: 12px 0;">
+            <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 1.1rem; color: #0f172a;">
+              <span>Total Due:</span>
+              <span id="summaryTotal" style="color: #0061ff;">$0.00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Payment Method & Checkout -->
+        <div style="border-left: 1px solid #f1f5f9; padding-left: 24px;">
+          <h3 style="margin-top: 0; font-size: 1.25rem; color: #0f172a;">Payment Method</h3>
+
+          <!-- Method Toggle -->
+          <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+            <button type="button" class="payment-tab-btn active" id="tabCard" onclick="switchPaymentMethod('card')">Credit / Debit</button>
+            <button type="button" class="payment-tab-btn" id="tabAch" onclick="switchPaymentMethod('ach')">ACH Bank Transfer</button>
+          </div>
+
+          <form id="paymentProcessForm" onsubmit="handlePaymentSubmit(event)">
+            <!-- Card Form Fields -->
+            <div id="cardFields" style="display: flex; flex-direction: column; gap: 14px;">
+              <div>
+                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Name on Card</label>
+                <input type="text" placeholder="John Doe" required class="payment-input">
+              </div>
+              <div>
+                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Card Number</label>
+                <input type="text" placeholder="4532 &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 8892" maxlength="19" required class="payment-input">
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div>
+                  <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Expiry Date</label>
+                  <input type="text" placeholder="MM/YY" maxlength="5" required class="payment-input">
+                </div>
+                <div>
+                  <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">CVC / CWW</label>
+                  <input type="text" placeholder="123" maxlength="4" required class="payment-input">
+                </div>
+              </div>
+            </div>
+
+            <!-- ACH Form Fields (Hidden by default) -->
+            <div id="achFields" style="display: none; flex-direction: column; gap: 14px;">
+              <div>
+                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Bank Account Name</label>
+                <input type="text" placeholder="Acme Corporate Checking" class="payment-input">
+              </div>
+              <div>
+                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Routing Number (ABA)</label>
+                <input type="text" placeholder="021000021" maxlength="9" class="payment-input">
+              </div>
+              <div>
+                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Account Number</label>
+                <input type="text" placeholder="1234567890" class="payment-input">
+              </div>
+            </div>
+
+            <div style="margin-top: 24px;">
+              <button type="submit" class="btn-n btn-n--black" style="width: 100%; justify-content: center; padding: 16px; background: #10b981;">
+                <span>🔒 Pay Securely Now</span>
+              </button>
+            </div>
+
+            <div style="text-align: center; margin-top: 12px; font-size: 0.75rem; color: #94a3b8;">
+              PCI-DSS Level 1 Compliant &bull; 256-Bit SSL Encryption
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Metrics / Stats -->
+  <section id="stats" class="stats-bg" style="padding: 80px 0; color: #fff;">
+    <div class="container-n" style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 32px; text-align: center;">
+      <div>
+        <div style="font-size: 48px; font-weight: 700; color: #38bdf8;">250+</div>
+        <div style="color: #e2e8f0;">Projects Delivered</div>
+      </div>
+      <div>
+        <div style="font-size: 48px; font-weight: 700; color: #a855f7;">99.9%</div>
+        <div style="color: #e2e8f0;">SLA Uptime Guaranteed</div>
+      </div>
+      <div>
+        <div style="font-size: 48px; font-weight: 700; color: #f43f5e;">15+</div>
+        <div style="color: #e2e8f0;">Years Experience</div>
+      </div>
+      <div>
+        <div style="font-size: 48px; font-weight: 700; color: #34d399;">98%</div>
+        <div style="color: #e2e8f0;">Client Retention</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials / Social Proof -->
+  <section id="testimonials" style="padding: 80px 0;">
+    <div class="container-n">
+      <h2 class="title-h2" style="text-align: center;">What Our Partners Say</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+        <div style="background: linear-gradient(135deg, #f8fafc, #f1f5f9); padding: 28px; border-radius: 12px; border-left: 4px solid #0061ff;">
+          <p style="font-style: italic; color: #54575e;">"Equivora rebuilt our core payment engine within deadline. Their engineering discipline and modern technology stack scaled our operations seamlessly."</p>
+          <strong style="color: #1e1d28;">— CTO, Enterprise FinTech</strong>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8fafc, #f1f5f9); padding: 28px; border-radius: 12px; border-left: 4px solid #a855f7;">
+          <p style="font-style: italic; color: #54575e;">"The cloud migration strategy reduced our infrastructure costs by 35% while increasing overall system performance and security compliance."</p>
+          <strong style="color: #1e1d28;">— VP of Engineering, HealthTech</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" style="padding: 80px 0; background-color: #f8fafc;">
+    <div class="container-n" style="max-width: 800px;">
+      <h2 class="title-h2" style="text-align: center; color: #1e1d28;">Frequently Asked Questions</h2>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button type="button" class="faq-header">
+            <span>What engagement models do you support?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-content">
+            <p>We offer dedicated engineering teams, project-based fixed scope delivery, and ongoing technical advisory depending on your organization's goals.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-header">
+            <span>How do you handle IP rights and security compliance?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-content">
+            <p>All intellectual property belongs entirely to the client upon creation. We strictly operate under standard NDA protocols and industry security frameworks.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-header">
+            <span>How fast can a project kick off?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-content">
+            <p>Initial discovery and architectural scoping typically take 1–2 weeks, after which engineering resources can begin sprint iterations immediately.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section id="contact" class="contact-bg" style="padding: 80px 0;">
+    <div class="container-n" style="max-width: 640px;">
+      <h2 class="title-h2" style="text-align: center; color: #1e1b4b;">Start Your Transformation</h2>
+      <form style="display: flex; flex-direction: column; gap: 16px; background: rgba(255, 255, 255, 0.95); padding: 32px; border-radius: 12px; border: 1px solid #cbd5e1; box-shadow: 0 10px 25px rgba(0,0,0,0.05);" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+        <input type="text" placeholder="Full Name" required style="padding: 14px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem; width: 100%;">
+        <input type="email" placeholder="Work Email" required style="padding: 14px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem; width: 100%;">
+        <textarea rows="4" placeholder="Tell us about your project requirements..." required style="padding: 14px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem; width: 100%;"></textarea>
+        <button type="submit" class="btn-n btn-n--black" style="justify-content: center; width: 100%; padding: 16px; background: linear-gradient(135deg, #0061ff, #4f46e5);">Send Message</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer style="background-color: #0f172a; color: #94a3b8; padding: 40px 0; border-top: 1px solid #1e293b;">
+  <div class="container-n" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+    <p style="margin: 0; font-size: 14px;">&copy; 2026 EquivoraSoftware. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Interactive Dynamic Scripts -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Service Cards "Learn More" Expandable Toggle
+    const cardButtons = document.querySelectorAll(".service-card .toggle-btn");
+    cardButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const card = btn.closest(".service-card");
+        const btnText = btn.querySelector(".btn-text");
+        const isExpanded = card.classList.contains("expanded");
+
+        if (isExpanded) {
+          card.classList.remove("expanded");
+          btnText.textContent = "Learn More";
+        } else {
+          card.classList.add("expanded");
+          btnText.textContent = "Show Less";
+        }
+      });
+    });
+
+    // FAQ Accordion Toggle
+    const faqHeaders = document.querySelectorAll(".faq-header");
+    faqHeaders.forEach(header => {
+      header.addEventListener("click", () => {
+        const item = header.parentElement;
+        const isActive = item.classList.contains("active");
+
+        document.querySelectorAll(".faq-item").forEach(otherItem => {
+          otherItem.classList.remove("active");
+        });
+
+        if (!isActive) {
+          item.classList.add("active");
+        }
+      });
+    });
+
+    // Client Portal Dropzone JS
+    const dropzone = document.getElementById("dropzone");
+    const fileInput = document.getElementById("portalFileInput");
+    const fileListContainer = document.getElementById("fileListContainer");
+    const uploadForm = document.getElementById("portalUploadForm");
+
+    if (dropzone) {
+      ['dragenter', 'dragover'].forEach(eventName => {
+        dropzone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          dropzone.classList.add("dragover");
+        }, false);
+      });
+
+      ['dragleave', 'drop'].forEach(eventName => {
+        dropzone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          dropzone.classList.remove("dragover");
+        }, false);
+      });
+
+      dropzone.addEventListener("drop", (e) => {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        handleFiles(files);
+      });
+
+      fileInput.addEventListener("change", () => {
+        handleFiles(fileInput.files);
+      });
+    }
+
+    function handleFiles(files) {
+      fileListContainer.innerHTML = "";
+      Array.from(files).forEach(file => {
+        const fileRow = document.createElement("div");
+        fileRow.style.cssText = "display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.8); padding: 10px 14px; border-radius: 6px; font-size: 0.875rem; color: #cbd5e1; border: 1px solid #334155;";
+        fileRow.innerHTML = `
+          <span>📄 <strong>${file.name}</strong> (${(file.size / (1024*1024)).toFixed(2)} MB)</span>
+          <span style="color: #10b981;">Ready to encrypt</span>
+        `;
+        fileListContainer.appendChild(fileRow);
+      });
+    }
+
+    if (uploadForm) {
+      uploadForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (fileListContainer.children.length === 0 && fileInput.files.length === 0) {
+          alert("Please select or drop at least one file to upload.");
+          return;
+        }
+        alert("Encryption complete. Documents successfully uploaded into the secure client vault!");
+        uploadForm.reset();
+        fileListContainer.innerHTML = "";
+      });
+    }
+  });
+
+  // Payment Portal Handlers
+  function updatePaymentTotal() {
+    const val = parseFloat(document.getElementById("payAmount").value) || 0;
+    const formatted = "$" + val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    document.getElementById("summarySubtotal").textContent = formatted;
+    document.getElementById("summaryTotal").textContent = formatted;
+  }
+
+  function switchPaymentMethod(type) {
+    const cardTab = document.getElementById("tabCard");
+    const achTab = document.getElementById("tabAch");
+    const cardFields = document.getElementById("cardFields");
+    const achFields = document.getElementById("achFields");
+
+    if (type === 'card') {
+      cardTab.classList.add("active");
+      achTab.classList.remove("active");
+      cardFields.style.display = "flex";
+      achFields.style.display = "none";
+    } else {
+      achTab.classList.add("active");
+      cardTab.classList.remove("active");
+      achFields.style.display = "flex";
+      cardFields.style.display = "none";
+    }
+  }
+
+  function handlePaymentSubmit(e) {
+    e.preventDefault();
+    const amount = document.getElementById("payAmount").value;
+    const invId = document.getElementById("invoiceId").value || "INV-2026";
+    if (!amount || parseFloat(amount) <= 0) {
+      alert("Please enter a valid payment amount.");
+      return;
+    }
+    alert(`Payment of $${amount} for ${invId} processed successfully! A confirmation receipt has been sent to your email.`);
+    document.getElementById("paymentProcessForm").reset();
+    document.getElementById("invoiceLookupForm").reset();
+    updatePaymentTotal();
+  }
+</script>
+
+</body>
+</html>
