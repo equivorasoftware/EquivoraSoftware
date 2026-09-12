@@ -55,7 +55,6 @@
       overflow-x: hidden;
       position: relative;
     }
-
     /* Typography & Hierarchy */
     .title { color: #1e1d28; font-size: 3.75rem; line-height: 1.17; margin: 0 0 1.5rem; }
     .title-h1 { font-family: Signifier, serif; font-size: 32px; font-weight: 300; line-height: 1.25; margin: 0; }
@@ -85,8 +84,8 @@
     .btn-n--white:hover { background-color: #f0f0f0; }
 
     /* Nav Links */
-    .nav-links { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; align-items: center; }
-    .nav-links a { color: #f8fafc; text-decoration: none; font-size: 15px; font-weight: 500; cursor: pointer; transition: color 0.2s ease; }
+    .nav-links { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; align-items: center; }
+    .nav-links a { color: #f8fafc; text-decoration: none; font-size: 14px; font-weight: 500; cursor: pointer; transition: color 0.2s ease; }
     .nav-links a:hover { color: #38bdf8; }
 
     /* Background Sections */
@@ -94,6 +93,99 @@
       background: linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(30, 27, 75, 0.85)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
       color: #fff;
     }
+
+    /* 40-Slide Showcase Carousel Styles */
+    .hero-slider-wrapper {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+      border: 3px solid rgba(56, 189, 248, 0.6);
+      margin-bottom: 36px;
+      background: #0f172a;
+    }
+    .hero-slide {
+      display: none;
+      position: relative;
+      height: 520px;
+      width: 100%;
+    }
+    .hero-slide.active {
+      display: block;
+      animation: fadeInSlide 0.8s ease-in-out;
+    }
+    @keyframes fadeInSlide {
+      from { opacity: 0.3; transform: scale(1.03); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0.9) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 48px;
+      text-align: left;
+    }
+    .hero-badge-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, #0061ff, #38bdf8);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 20px rgba(0, 97, 255, 0.5);
+      width: fit-content;
+    }
+    .hero-slide-title {
+      font-size: 2.75rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin: 0 0 10px;
+      text-shadow: 0 3px 15px rgba(0,0,0,0.6);
+      letter-spacing: -0.01em;
+    }
+    .hero-slide-desc {
+      font-size: 1.25rem;
+      color: #f1f5f9;
+      margin: 0;
+      max-width: 850px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      font-weight: 500;
+    }
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+      padding: 0 16px;
+    }
+    .slider-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.35);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .slider-dot.active {
+      background: #38bdf8;
+      transform: scale(1.4);
+      box-shadow: 0 0 12px #38bdf8;
+    }
+
 
     .about-bg {
       background: linear-gradient(135deg, rgba(238, 242, 255, 0.92), rgba(224, 231, 255, 0.95)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
@@ -435,6 +527,59 @@
       color: #54575e;
       line-height: 1.6;
     }
+    /* Fortune 500 Partners Section Styles */
+    .partners-section {
+      background: rgba(15, 23, 42, 0.95);
+      border-top: 1px solid rgba(56, 189, 248, 0.2);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 60px 0;
+    }
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      align-items: center;
+      justify-items: center;
+    }
+    .partner-card {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+      width: 100%;
+      height: 110px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      backdrop-filter: blur(6px);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .partner-card:hover {
+      transform: translateY(-4px);
+      border-color: #38bdf8;
+      box-shadow: 0 8px 24px rgba(56, 189, 248, 0.15);
+    }
+    .partner-card img {
+      max-height: 38px;
+      width: auto;
+      object-fit: contain;
+      opacity: 1;
+      transition: transform 0.2s ease;
+    }
+    .partner-card:hover img {
+      transform: scale(1.05);
+    }
+    .partner-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin: 0;
+      text-align: center;
+    }
+
+
   </style>
 </head>
 <body>
@@ -443,13 +588,15 @@
 <header class="header" style="border-bottom: 1px solid rgba(255, 255, 255, 0.1); position: sticky; top: 0; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); z-index: 100;">
   <div class="container-n row" style="justify-content: space-between; align-items: center; padding-top: 20px; padding-bottom: 20px;">
     <div class="logo">
-      <a href="#about" style="font-weight: 700; font-size: 1.5rem; text-decoration: none; color: #fff;">
-        Equivora<span style="color: #38bdf8;">Software</span>
+      <a href="#" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="img/images/logo3.png" alt="EquivoraSoftware Logo" style="height: 200px; width: auto; display: block;">
       </a>
     </div>
 
+
     <nav>
       <ul class="nav-links">
+        <li><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#portfolio">Showcase</a></li>
@@ -458,26 +605,487 @@
         <li><a href="#stats">Impact</a></li>
         <li><a href="#testimonials">Clients</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact" class="btn-n btn-n--black" style="padding: 10px 20px; background: linear-gradient(135deg, #0061ff, #38bdf8);">Contact Us</a></li>
+        <li><a href="#contact" class="btn-n btn-n--black" style="padding: 8px 16px; background: linear-gradient(135deg, #0061ff, #38bdf8);">Contact Us</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
 <main>
-  <!-- Hero Section -->
-  <section class="section hero-bg" style="padding: 120px 0 100px;">
-    <div class="container-n" style="max-width: 900px; text-align: center;">
-      <h1 class="title-h1" style="color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">IT Services, Software Development &amp; Platform Solutions for Connecticut Businesses</h1>
-      <p class="description" style="font-size: 1.2rem; color: #f1f5f9; margin: 24px 0 36px;">
+
+  <!-- Hero Section with 40 Auto-Rotating Solution & Technology Slides -->
+  <section class="section hero-bg" style="padding: 80px 0 80px;">
+    <div class="container-n" style="max-width: 1150px; text-align: center;">
+
+      <!-- 40-Slide Auto Carousel Component -->
+      <div class="hero-slider-wrapper" id="heroSlider">
+
+        <!-- Slide 1 -->
+        <div class="hero-slide active">
+          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1400&q=80" alt="Cloud Architecture">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Cloud Infrastructure &bull; </span>
+            <h2 class="hero-slide-title">Enterprise Cloud Architecture</h2>
+            <p class="hero-slide-desc">Designing scalable, highly available, and secure cloud environments tailored for modern business operations.</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1400&q=80" alt="Microservices">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Platform Engineering &bull; </span>
+            <h2 class="hero-slide-title">Robust Microservices Platforms</h2>
+            <p class="hero-slide-desc">Connecting global technology infrastructure with timeless structural reliability and modular design.</p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=1400&q=80" alt="Digital Networks">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Network Solutions &bull;</span>
+            <h2 class="hero-slide-title">High-Frequency Digital Networks</h2>
+            <p class="hero-slide-desc">Powering high-speed data streams and cutting-edge urban connectivity with high-availability applications.</p>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1400&q=80" alt="Software Engineering">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Custom Development &bull; </span>
+            <h2 class="hero-slide-title">Intuitive Enterprise Software Interfaces</h2>
+            <p class="hero-slide-desc">Bold creative design translated into robust software engineering solutions and seamless user experiences.</p>
+          </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1400&q=80" alt="Digital Transformation">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Digital Transformation &bull; </span>
+            <h2 class="hero-slide-title">Platform Development &amp; Harmony</h2>
+            <p class="hero-slide-desc">Uncompromising attention to detail and structural integrity in digital transformation projects.</p>
+          </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=1400&q=80" alt="Fault Tolerance">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">System Reliability &bull;</span>
+            <h2 class="hero-slide-title">Fault-Tolerant Enterprise Platforms</h2>
+            <p class="hero-slide-desc">Building resilient digital architectures that withstand high transaction volumes and ensure continuous uptime.</p>
+          </div>
+        </div>
+
+        <!-- Slide 7 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=1400&q=80" alt="AI Integration">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Artificial Intelligence &bull;</span>
+            <h2 class="hero-slide-title">AI Integration &amp; Enterprise Scalability</h2>
+            <p class="hero-slide-desc">Reaching unprecedented technological heights with intelligent automation and machine learning models.</p>
+          </div>
+        </div>
+
+        <!-- Slide 8 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1508873696983-2df5c920ac1c?auto=format&fit=crop&w=1400&q=80" alt="Uptime Guarantees">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">IT Support &bull;</span>
+            <h2 class="hero-slide-title">Precision Timing &amp; SLA Guarantees</h2>
+            <p class="hero-slide-desc">Continuous uptime and reliable technical support delivered by EquivoraSoftware experts.</p>
+          </div>
+        </div>
+
+        <!-- Slide 9 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=1400&q=80" alt="Engineering Breakthroughs">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Milestone Delivery &bull;</span>
+            <h2 class="hero-slide-title">Engineering Breakthroughs &amp; Milestones</h2>
+            <p class="hero-slide-desc">Celebrating technical achievements and successful software deployments for our global client portfolio.</p>
+          </div>
+        </div>
+
+        <!-- Slide 10 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1549877452-9c387954fbc2?auto=format&fit=crop&w=1400&q=80" alt="UI/UX Design">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">User Experience &bull;</span>
+            <h2 class="hero-slide-title">Clean Aesthetics &amp; UI Design</h2>
+            <p class="hero-slide-desc">Intuitive interface design optimized for modern enterprise cloud applications and SaaS platforms.</p>
+          </div>
+        </div>
+
+        <!-- Slide 11 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1400&q=80" alt="API Integration">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">API Connectivity &bull;</span>
+            <h2 class="hero-slide-title">Secure API Integrations</h2>
+            <p class="hero-slide-desc">Bridging complex data streams with secure, high-speed API connectivity and modern software solutions.</p>
+          </div>
+        </div>
+
+        <!-- Slide 12 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=1400&q=80" alt="FinTech Analytics">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Financial Technology &bull; </span>
+            <h2 class="hero-slide-title">FinTech Analytics &amp; Reporting</h2>
+            <p class="hero-slide-desc">Powering financial institutions and market leaders with custom business analytics dashboards.</p>
+          </div>
+        </div>
+
+        <!-- Slide 13 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1618588507085-c79565432917?auto=format&fit=crop&w=1400&q=80" alt="Data Security">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Data Security &bull;</span>
+            <h2 class="hero-slide-title">Uncompromising Data Privacy</h2>
+            <p class="hero-slide-desc">Empowering businesses with secure IT infrastructure, strict data governance, and complete privacy.</p>
+          </div>
+        </div>
+
+        <!-- Slide 14 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1616844345436-5d63f034076e?auto=format&fit=crop&w=1400&q=80" alt="Next-Gen Development">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Next-Gen Tech &bull;</span>
+            <h2 class="hero-slide-title">Forward-Looking Cloud Solutions</h2>
+            <p class="hero-slide-desc">Next-generation software development engineered to keep your enterprise ahead of the competition.</p>
+          </div>
+        </div>
+
+        <!-- Slide 15 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1400&q=80" alt="Security Standards">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Compliance &bull; </span>
+            <h2 class="hero-slide-title">Rock-Solid Security Standards</h2>
+            <p class="hero-slide-desc">Monumental software engineering built on stringent security principles and industry compliance frameworks.</p>
+          </div>
+        </div>
+
+        <!-- Slide 16 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1400&q=80" alt="Predictive Analytics">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Data Intelligence &bull; </span>
+            <h2 class="hero-slide-title">Predictive Modeling &amp; Analytics</h2>
+            <p class="hero-slide-desc">Deep data insights and enterprise machine learning intelligence crafted for modern executive decision-making.</p>
+          </div>
+        </div>
+
+        <!-- Slide 17 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=1400&q=80" alt="Digital Governance">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Digital Governance &bull;</span>
+            <h2 class="hero-slide-title">Audited Digital Governance Platforms</h2>
+            <p class="hero-slide-desc">Compliant, secure, and fully audited digital management systems for enterprise contractors.</p>
+          </div>
+        </div>
+
+        <!-- Slide 18 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1400&q=80" alt="High-Performance Apps">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Performance &bull; </span>
+            <h2 class="hero-slide-title">High-Performance Applications</h2>
+            <p class="hero-slide-desc">Engaging digital experiences and responsive software systems designed to accelerate enterprise growth.</p>
+          </div>
+        </div>
+
+        <!-- Slide 19 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1400&q=80" alt="Zero Downtime">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">High Availability &bull;</span>
+            <h2 class="hero-slide-title">Zero-Downtime Operations</h2>
+            <p class="hero-slide-desc">High-availability web applications built to handle peak transaction volumes seamlessly.</p>
+          </div>
+        </div>
+
+        <!-- Slide 20 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=1400&q=80" alt="Cloud Migration">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Cloud Migration &bull;</span>
+            <h2 class="hero-slide-title">Legacy System Migration</h2>
+            <p class="hero-slide-desc">Connecting legacy databases with modern microservices architectures and smooth cloud transitions.</p>
+          </div>
+        </div>
+
+        <!-- Slide 21 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1400&q=80" alt="Sprint Planning">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Agile Methodology &bull; </span>
+            <h2 class="hero-slide-title">Agile Sprint Planning &amp; Roadmaps</h2>
+            <p class="hero-slide-desc">Collaborative cross-functional engineering pods aligning deliverables for rapid time-to-market.</p>
+          </div>
+        </div>
+
+        <!-- Slide 22 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80" alt="Scrum Standup">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Project Management &bull;</span>
+            <h2 class="hero-slide-title">Daily Standups &amp; Blocker Resolution</h2>
+            <p class="hero-slide-desc">Proactive communication and agile project management ensuring consistent milestone delivery.</p>
+          </div>
+        </div>
+
+        <!-- Slide 23 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=80" alt="Retrospectives">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Continuous Improvement &bull;</span>
+            <h2 class="hero-slide-title">Workflow Optimization &amp; Retrospectives</h2>
+            <p class="hero-slide-desc">Iterative process refinement and high engineering standards maintained across every client project.</p>
+          </div>
+        </div>
+
+        <!-- Slide 24 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=80" alt="Code Review">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Quality Assurance &bull;</span>
+            <h2 class="hero-slide-title">Technical Architecture &amp; Code Review</h2>
+            <p class="hero-slide-desc">Rigorous peer reviews, security audits, and automated testing before any production deployment.</p>
+          </div>
+        </div>
+
+        <!-- Slide 25 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1400&q=80" alt="Sprint Demo">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Stakeholder Alignment &bull;</span>
+            <h2 class="hero-slide-title">Sprint Demos &amp; Milestone Reviews</h2>
+            <p class="hero-slide-desc">Transparent milestone demonstrations with key enterprise stakeholders to guarantee complete alignment.</p>
+          </div>
+        </div>
+
+        <!-- Slide 26 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1426604966848-d7adacbd02bff?auto=format&fit=crop&w=1400&q=80" alt="Scalable Cloud">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Infrastructure &bull; </span>
+            <h2 class="hero-slide-title">Scalable Cloud Infrastructure</h2>
+            <p class="hero-slide-desc">Advanced cloud systems designed by EquivoraSoftware to conquer your toughest technical challenges.</p>
+          </div>
+        </div>
+
+        <!-- Slide 27 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80" alt="Streamlined Operations">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Digital Operations &bull;</span>
+            <h2 class="hero-slide-title">Frictionless Digital Operations</h2>
+            <p class="hero-slide-desc">Smooth user experiences and streamlined digital workflows optimized for business efficiency.</p>
+          </div>
+        </div>
+
+        <!-- Slide 28 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1400&q=80" alt="Ecosystems">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">System Integration &bull;</span>
+            <h2 class="hero-slide-title">Interconnected IT Ecosystems</h2>
+            <p class="hero-slide-desc">Integrated microservices and robust software platforms working in perfect operational harmony.</p>
+          </div>
+        </div>
+
+        <!-- Slide 29 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1400&q=80" alt="Digital Growth">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Business Growth &bull;</span>
+            <h2 class="hero-slide-title">Transformative Digital Growth</h2>
+            <p class="hero-slide-desc">Innovative technology strategies and high-impact IT solutions powering business expansion.</p>
+          </div>
+        </div>
+
+        <!-- Slide 30 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=80" alt="Peak Performance">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Performance Tuning &bull;</span>
+            <h2 class="hero-slide-title">Peak System Performance</h2>
+            <p class="hero-slide-desc">Achieving maximum system efficiency with high-throughput cloud architectures and automated workflows.</p>
+          </div>
+        </div>
+
+        <!-- Slide 31 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=80" alt="Executive Strategy">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Professional Services &bull;</span>
+            <h2 class="hero-slide-title">Executive Strategy &amp; Innovation</h2>
+            <p class="hero-slide-desc">Strategic technology advisory tailored for forward-thinking leadership teams.</p>
+          </div>
+        </div>
+
+        <!-- Slide 32 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80" alt="Engineering Excellence">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Professional Services &bull;</span>
+            <h2 class="hero-slide-title">Engineering Excellence in Action</h2>
+            <p class="hero-slide-desc">Dedicated technical experts committed to your long-term system reliability and success.</p>
+          </div>
+        </div>
+
+        <!-- Slide 33 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1400&q=80" alt="Business Intelligence">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Professional Services &bull;</span>
+            <h2 class="hero-slide-title">Advanced Data Insights &amp; BI</h2>
+            <p class="hero-slide-desc">Turning complex operational data into clear, actionable business intelligence.</p>
+          </div>
+        </div>
+
+        <!-- Slide 34 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80" alt="Full-Stack Development">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Professional Services &bull;</span>
+            <h2 class="hero-slide-title">Full-Stack Custom Development</h2>
+            <p class="hero-slide-desc">Robust, scalable, and secure software solutions engineered for modern enterprises.</p>
+          </div>
+        </div>
+
+        <!-- Slide 35 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80" alt="Digital Transformation">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Professional Services &bull;</span>
+            <h2 class="hero-slide-title">Enterprise Digital Transformation</h2>
+            <p class="hero-slide-desc">Modernizing legacy systems to drive operational efficiency, agility, and revenue growth.</p>
+          </div>
+        </div>
+
+        <!-- Slide 36 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1400&q=80" alt="Client Partnership">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Client Meetings &bull;</span>
+            <h2 class="hero-slide-title">Strategic Client Partnerships</h2>
+            <p class="hero-slide-desc">Building lasting relationships founded on transparency, trust, and exceptional software delivery.</p>
+          </div>
+        </div>
+
+        <!-- Slide 37 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=1400&q=80" alt="Executive Briefing">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Client Meetings &bull;</span>
+            <h2 class="hero-slide-title">Executive Project Briefings</h2>
+            <p class="hero-slide-desc">Aligning technology milestones directly with executive business objectives and KPIs.</p>
+          </div>
+        </div>
+
+        <!-- Slide 38 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?auto=format&fit=crop&w=1400&q=80" alt="Solution Design">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Client Meetings &bull;</span>
+            <h2 class="hero-slide-title">Collaborative Solution Design</h2>
+            <p class="hero-slide-desc">Working hand-in-hand with technical leads and stakeholders to architect future-proof software.</p>
+          </div>
+        </div>
+
+        <!-- Slide 39 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1400&q=80" alt="Launch Sync">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Client Meetings &bull;</span>
+            <h2 class="hero-slide-title">Milestone Reviews &amp; Launch Syncs</h2>
+            <p class="hero-slide-desc">Ensuring flawless execution and seamless go-live deployments for all enterprise platforms.</p>
+          </div>
+        </div>
+
+        <!-- Slide 40 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80" alt="Client Support">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Client Meetings &bull;</span>
+            <h2 class="hero-slide-title">Ongoing Client Success &amp; Support</h2>
+            <p class="hero-slide-desc">Dedicated 24/7 technical support and continuous platform optimization delivered by EquivoraSoftware.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Slider Dots Indicator (No Slide Numbers) -->
+      <div class="slider-dots" id="sliderDots"></div>
+
+      <!-- Hero Call To Action Content -->
+      <h1 class="title-h1" style="color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.3); margin-top: 32px;">IT Services, Software Development &amp; Platform Solutions for Connecticut Businesses</h1>
+      <p class="description" style="font-size: 1.05rem; color: #f1f5f9; margin: 20px 0 32px;">
         Local IT support services, custom software development services, artificial intelligence, machine learning, data analytics, automation services, digital modeling, platform services, migration services, disaster recovery, and backup services—delivered by a Connecticut team focused on reliable IT operations and scalable IT infrastructure.
       </p>
       <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
         <a href="#contact" class="btn-n btn-n--black" style="box-shadow: 0 4px 14px rgba(0, 97, 255, 0.4);">Schedule a Free IT &amp; Software Assessment</a>
         <a href="#services" class="btn-n btn-n--white" style="box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);">Explore Our Full Range of Services</a>
       </div>
+
     </div>
   </section>
+
+  <!-- JavaScript for 40-Slide Auto Carousel and Interactions -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 40-Slide Carousel Logic
+      const slides = document.querySelectorAll(".hero-slide");
+      const dotsContainer = document.getElementById("sliderDots");
+      let currentSlide = 0;
+      let slideInterval;
+
+      if (slides.length > 0 && dotsContainer) {
+        // Create dots dynamically without numbers
+        slides.forEach((_, index) => {
+          const dot = document.createElement("div");
+          dot.classList.add("slider-dot");
+          if (index === 0) dot.classList.add("active");
+          dot.addEventListener("click", () => {
+            goToSlide(index);
+            resetInterval();
+          });
+          dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll(".slider-dot");
+
+        function goToSlide(n) {
+          slides[currentSlide].classList.remove("active");
+          dots[currentSlide].classList.remove("active");
+          currentSlide = (n + slides.length) % slides.length;
+          slides[currentSlide].classList.add("active");
+          dots[currentSlide].classList.add("active");
+        }
+
+        function nextSlide() {
+          goToSlide(currentSlide + 1);
+        }
+
+        function resetInterval() {
+          clearInterval(slideInterval);
+          slideInterval = setInterval(nextSlide, 5000); // 5 seconds interval
+        }
+
+        // Initialize auto-rotation every 5 seconds
+        slideInterval = setInterval(nextSlide, 5000);
+      }
+    });
+  </script>
+
+
 
   <!-- About Us Section -->
   <section id="about" class="about-bg" style="padding: 80px 0;">
@@ -497,7 +1105,7 @@
       <div style="position: relative; border-radius: 16px; overflow: hidden; margin-bottom: 48px; box-shadow: 0 10px 30px rgba(0,0,0,0.12);">
         <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1280&q=80" alt="EquivoraSoftware Engineering Workspace" style="width: 100%; height: 280px; object-fit: cover; display: block;" loading="lazy">
         <div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.3) 100%); display: flex; align-items: flex-end; padding: 32px;">
-          <p style="color: #f8fafc; font-size: 1.2rem; font-weight: 500; margin: 0; max-width: 800px;">
+          <p style="color: #f8fafc; font-size: 1.05rem; font-weight: 500; margin: 0; max-width: 800px;">
             Connecticut IT services, software development services, and platform solutions that keep your business running and growing.
           </p>
         </div>
@@ -617,14 +1225,13 @@
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
 
-        <!-- Service Card 1: IT Services & Support -->
+        <!-- Service Card 1 -->
         <div class="service-card" style="border-top: 4px solid #0061ff;">
           <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=80" alt="IT Services & IT Support Services" class="service-card-img" loading="lazy">
           <div class="service-card-body">
             <div>
               <h3 style="margin-top: 0; color: #1e3a8a;">IT Services &amp; IT Support Services</h3>
               <p style="color: #4b5563; margin: 0;">Proactive IT operations, help desk, monitoring, and on-site/remote support tailored for Connecticut businesses.</p>
-
               <div class="expanded-content">
                 <strong style="color: #1e3a8a; font-size: 0.95rem;">Key Offerings &amp; Scope:</strong>
                 <ul>
@@ -641,14 +1248,13 @@
           </div>
         </div>
 
-        <!-- Service Card 2: IT Infrastructure & Operations -->
+        <!-- Service Card 2 -->
         <div class="service-card" style="border-top: 4px solid #06b6d4;">
           <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="IT Infrastructure & IT Operations" class="service-card-img" loading="lazy">
           <div class="service-card-body">
             <div>
               <h3 style="margin-top: 0; color: #083344;">IT Infrastructure &amp; IT Operations</h3>
               <p style="color: #4b5563; margin: 0;">Design, implementation, and ongoing management of secure, high-performance IT infrastructure.</p>
-
               <div class="expanded-content">
                 <strong style="color: #083344; font-size: 0.95rem;">Infrastructure Capabilities:</strong>
                 <ul>
@@ -665,14 +1271,13 @@
           </div>
         </div>
 
-        <!-- Service Card 3: Software Development Services -->
+        <!-- Service Card 3 -->
         <div class="service-card" style="border-top: 4px solid #6366f1;">
-          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="Software Development Services & Software Solutions" class="service-card-img" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="Software Development Services" class="service-card-img" loading="lazy">
           <div class="service-card-body">
             <div>
               <h3 style="margin-top: 0; color: #312e81;">Software Development Services &amp; Solutions</h3>
               <p style="color: #4b5563; margin: 0;">Custom software development services that create reliable, scalable software solutions aligned with your growth goals.</p>
-
               <div class="expanded-content">
                 <strong style="color: #312e81; font-size: 0.95rem;">Key Offerings &amp; Architecture:</strong>
                 <ul>
@@ -689,14 +1294,13 @@
           </div>
         </div>
 
-        <!-- Service Card 4: Platform Services -->
+        <!-- Service Card 4 -->
         <div class="service-card" style="border-top: 4px solid #3b82f6;">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Platform Services & Platform Solutions" class="service-card-img" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Platform Services" class="service-card-img" loading="lazy">
           <div class="service-card-body">
             <div>
               <h3 style="margin-top: 0; color: #1e3a8a;">Platform Services &amp; Platform Solutions</h3>
               <p style="color: #4b5563; margin: 0;">End-to-end platform services and platform solutions—including design, development, integration, and ongoing optimization.</p>
-
               <div class="expanded-content">
                 <strong style="color: #1e3a8a; font-size: 0.95rem;">Capabilities:</strong>
                 <ul>
@@ -713,14 +1317,13 @@
           </div>
         </div>
 
-        <!-- Service Card 5: AI, Machine Learning & Data Analytics -->
+        <!-- Service Card 5 -->
         <div class="service-card" style="border-top: 4px solid #8b5cf6;">
-          <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Artificial Intelligence, Machine Learning & Data Analytics" class="service-card-img" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="AI & Data Analytics" class="service-card-img" loading="lazy">
           <div class="service-card-body">
             <div>
               <h3 style="margin-top: 0; color: #4c1d95;">AI, Machine Learning &amp; Data Analytics</h3>
               <p style="color: #4b5563; margin: 0;">Practical artificial intelligence and machine learning solutions combined with data analytics to unlock insights.</p>
-
               <div class="expanded-content">
                 <strong style="color: #4c1d95; font-size: 0.95rem;">Capabilities &amp; Analytics:</strong>
                 <ul>
@@ -737,14 +1340,13 @@
           </div>
         </div>
 
-        <!-- Service Card 6: Automation Services & Digital Modeling -->
+        <!-- Service Card 6 -->
         <div class="service-card" style="border-top: 4px solid #10b981;">
-          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Automation Services & Digital Modeling" class="service-card-img" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Automation Services" class="service-card-img" loading="lazy">
           <div class="service-card-body">
             <div>
               <h3 style="margin-top: 0; color: #065f46;">Automation Services &amp; Digital Modeling</h3>
               <p style="color: #4b5563; margin: 0;">Automation services that streamline workflows, plus digital modeling capabilities that improve planning and simulation.</p>
-
               <div class="expanded-content">
                 <strong style="color: #065f46; font-size: 0.95rem;">Offerings:</strong>
                 <ul>
@@ -756,102 +1358,6 @@
               </div>
             </div>
             <button type="button" class="arrow-link toggle-btn" style="color: #10b981;">
-              <span class="btn-text">Learn More</span> <span>&rarr;</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Service Card 7: Migration Services -->
-        <div class="service-card" style="border-top: 4px solid #f59e0b;">
-          <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80" alt="Migration Services" class="service-card-img" loading="lazy">
-          <div class="service-card-body">
-            <div>
-              <h3 style="margin-top: 0; color: #92400e;">Migration Services</h3>
-              <p style="color: #4b5563; margin: 0;">Seamless migration services for applications, data, and infrastructure to modern cloud or hybrid environments.</p>
-
-              <div class="expanded-content">
-                <strong style="color: #92400e; font-size: 0.95rem;">Migration Scope:</strong>
-                <ul>
-                  <li>Cloud &amp; Hybrid Environment Migrations</li>
-                  <li>Database &amp; Data Warehouse Transfers</li>
-                  <li>Legacy Application Replatforming</li>
-                  <li>Zero-Downtime Transition Strategies</li>
-                </ul>
-              </div>
-            </div>
-            <button type="button" class="arrow-link toggle-btn" style="color: #f59e0b;">
-              <span class="btn-text">Learn More</span> <span>&rarr;</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Service Card 8: Disaster Recovery & Backup Services -->
-        <div class="service-card" style="border-top: 4px solid #ef4444;">
-          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Disaster Recovery & Backup Services" class="service-card-img" loading="lazy">
-          <div class="service-card-body">
-            <div>
-              <h3 style="margin-top: 0; color: #991b1b;">Disaster Recovery &amp; Backup Services</h3>
-              <p style="color: #4b5563; margin: 0;">Robust disaster recovery and backup services that protect critical data and ensure rapid business continuity.</p>
-
-              <div class="expanded-content">
-                <strong style="color: #991b1b; font-size: 0.95rem;">Continuity Offerings:</strong>
-                <ul>
-                  <li>Automated Cloud &amp; Local Backup Solutions</li>
-                  <li>Disaster Recovery Plan (DRP) Development</li>
-                  <li>Rapid RTO/RPO Recovery Testing</li>
-                  <li>Immutable Storage &amp; Ransomware Defense</li>
-                </ul>
-              </div>
-            </div>
-            <button type="button" class="arrow-link toggle-btn" style="color: #ef4444;">
-              <span class="btn-text">Learn More</span> <span>&rarr;</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Service Card 9: Software Support & Application Support -->
-        <div class="service-card" style="border-top: 4px solid #ec4899;">
-          <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80" alt="Software Support Services & Application Support" class="service-card-img" loading="lazy">
-          <div class="service-card-body">
-            <div>
-              <h3 style="margin-top: 0; color: #831843;">Software Support &amp; Application Support</h3>
-              <p style="color: #4b5563; margin: 0;">Ongoing software support services and application support to maintain performance and security.</p>
-
-              <div class="expanded-content">
-                <strong style="color: #831843; font-size: 0.95rem;">Support Scope:</strong>
-                <ul>
-                  <li>24/7 Application Monitoring &amp; Maintenance</li>
-                  <li>Bug Fixing &amp; Performance Tuning</li>
-                  <li>Security Patching &amp; Version Upgrades</li>
-                  <li>Dedicated Help Desk for Software Issues</li>
-                </ul>
-              </div>
-            </div>
-            <button type="button" class="arrow-link toggle-btn" style="color: #ec4899;">
-              <span class="btn-text">Learn More</span> <span>&rarr;</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Service Card 10: Cybersecurity & Compliance -->
-        <div class="service-card" style="border-top: 4px solid #1e293b;">
-          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="Cybersecurity & Compliance" class="service-card-img" loading="lazy">
-          <div class="service-card-body">
-            <div>
-              <h3 style="margin-top: 0; color: #0f172a;">Cybersecurity &amp; Compliance</h3>
-              <p style="color: #4b5563; margin: 0;">Integrated security across IT infrastructure, platforms, applications, and data—aligned with industry standards.</p>
-
-              <div class="expanded-content">
-                <strong style="color: #0f172a; font-size: 0.95rem;">Security Standards:</strong>
-                <ul>
-                  <li>SOC2, ISO27001, &amp; HIPAA Compliance</li>
-                  <li>Automated Penetration Testing &amp; Auditing</li>
-                  <li>Zero-Trust Network Access (ZTNA)</li>
-                  <li>End-to-End Encryption at Rest &amp; Transit</li>
-                </ul>
-              </div>
-            </div>
-            <button type="button" class="arrow-link toggle-btn" style="color: #1e293b;">
               <span class="btn-text">Learn More</span> <span>&rarr;</span>
             </button>
           </div>
@@ -882,6 +1388,145 @@
           </div>
         </div>
 
+        <!-- Portfolio Item 2 -->
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="DevOps & Automated CI/CD Pipelines" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3>DevOps &amp; Automated CI/CD Pipelines</h3>
+            <p>Implementing continuous integration and automated deployment workflows using Docker, Kubernetes, and GitHub Actions for rapid releases.</p>
+            <a href="#contact" class="btn-n btn-n--black" style="padding: 8px 16px; font-size: 0.85rem; background: linear-gradient(135deg, #0061ff, #38bdf8);">Optimize Deployments</a>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 3 -->
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Enterprise Analytics & Business Intelligence" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3>Enterprise Analytics &amp; Business Intelligence</h3>
+            <p>Building high-performance data warehouses and custom executive reporting dashboards that turn raw operational metrics into actionable insights.</p>
+            <a href="#contact" class="btn-n btn-n--black" style="padding: 8px 16px; font-size: 0.85rem; background: linear-gradient(135deg, #0061ff, #38bdf8);">Unlock Data Insights</a>
+          </div>
+        </div>
+
+
+        <!-- Portfolio Item 4 -->
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Cloud Security & Compliance Auditing" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3>Cloud Security &amp; Compliance Auditing</h3>
+            <p>Ensuring strict alignment with SOC 2, HIPAA, and ISO 27001 regulatory frameworks across all cloud-hosted enterprise workloads.</p>
+            <a href="#contact" class="btn-n btn-n--black" style="padding: 8px 16px; font-size: 0.85rem; background: linear-gradient(135deg, #0061ff, #38bdf8);">Review Compliance</a>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 5 -->
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="Scalable Web & Mobile Applications" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3>Scalable Web &amp; Mobile Applications</h3>
+            <p>Developing responsive, high-performance customer portals and mobile applications built on modern JavaScript frameworks and robust backends.</p>
+            <a href="#contact" class="btn-n btn-n--black" style="padding: 8px 16px; font-size: 0.85rem; background: linear-gradient(135deg, #0061ff, #38bdf8);">Build Your Application</a>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 6 (New Competency Item 1) -->
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" alt="API Gateway & Microservices Orchestration" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3>API Gateway &amp; Microservices Orchestration</h3>
+            <p>Designing secure, low-latency API gateways and service meshes to seamlessly connect distributed enterprise applications and third-party tools.</p>
+            <a href="#contact" class="btn-n btn-n--black" style="padding: 8px 16px; font-size: 0.85rem; background: linear-gradient(135deg, #0061ff, #38bdf8);">Connect Systems</a>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 7 (New Competency Item 2) -->
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80" alt="Disaster Recovery & High-Availability Backup" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3>Disaster Recovery &amp; High-Availability Backup</h3>
+            <p>Architecting automated disaster recovery plans and immutable backup solutions to guarantee zero data loss and minimal RTO/RPO during outages.</p>
+            <a href="#contact" class="btn-n btn-n--black" style="padding: 8px 16px; font-size: 0.85rem; background: linear-gradient(135deg, #0061ff, #38bdf8);">Protect Your Data</a>
+          </div>
+        </div>
+
+
+        <!-- Portfolio Item 9 (New Competency Item 4) -->
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="IT Consulting & Digital Strategy Advisory" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3>IT Consulting &amp; Digital Strategy Advisory</h3>
+            <p>Partnering with executive leadership to assess technology roadmaps, optimize IT budgets, and align software investments with long-term business goals.</p>
+            <a href="#contact" class="btn-n btn-n--black" style="padding: 8px 16px; font-size: 0.85rem; background: linear-gradient(135deg, #0061ff, #38bdf8);">Schedule Consultation</a>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="AI & LLM RAG Knowledge Base Integration" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3>AI &amp; LLM RAG Knowledge Base Integration</h3>
+            <p>Implementing private Retrieval-Augmented Generation (RAG) pipelines and custom AI models to empower internal knowledge management securely.</p>
+            <span style="font-size: 0.8rem; color: #38bdf8; font-weight: 600; text-transform: uppercase;">OpenAI &bull; LangChain &bull; Vector DB</span>
+          </div>
+        </div>
+
+
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Real-Time Business Intelligence Dashboards" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3>Real-Time Business Intelligence Dashboards</h3>
+            <p>Creating interactive executive reporting tools that ingest multi-source telemetry data to visualize KPIs and financial metrics in real time.</p>
+            <span style="font-size: 0.8rem; color: #38bdf8; font-weight: 600; text-transform: uppercase;">Tableau &bull; PowerBI &bull; Snowflake</span>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="Custom Enterprise ERP & CRM Development" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3>Custom Enterprise ERP &amp; CRM Development</h3>
+            <p>Building tailored resource planning and customer relationship management systems built specifically around unique operational workflows.</p>
+            <span style="font-size: 0.8rem; color: #38bdf8; font-weight: 600; text-transform: uppercase;">Python &bull; React &bull; PostgreSQL &bull; APIs</span>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Automated Compliance & SOC 2 Auditing" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3>Automated Compliance &amp; SOC 2 Auditing</h3>
+            <p>Streamlining regulatory compliance processes with continuous automated controls monitoring for SOC 2, HIPAA, and ISO 27001 standards.</p>
+            <span style="font-size: 0.8rem; color: #38bdf8; font-weight: 600; text-transform: uppercase;">SOC 2 &bull; HIPAA &bull; ISO 27001 &bull; Audit</span>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Dedicated Help Desk & IT Support Operations" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3>Dedicated Help Desk &amp; IT Support Operations</h3>
+            <p>Providing Tier 1 through Tier 3 technical support, remote troubleshooting, and asset management for distributed enterprise workforces.</p>
+            <span style="font-size: 0.8rem; color: #38bdf8; font-weight: 600; text-transform: uppercase;">ITIL &bull; Service Desk &bull; SLA Management</span>
+          </div>
+        </div>
+
+
+        <!-- Portfolio Item 10 (New Competency Item 5) -->
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?auto=format&fit=crop&w=600&q=80" alt="Legacy System Modernization & Migration" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3>Legacy System Modernization &amp; Migration</h3>
+            <p>Safely refactoring outdated monolithic codebases and on-premise databases into modern cloud-native architectures with zero downtime.</p>
+            <a href="#contact" class="btn-n btn-n--black" style="padding: 8px 16px; font-size: 0.85rem; background: linear-gradient(135deg, #0061ff, #38bdf8);">Modernize Systems</a>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=600&q=80" alt="Automated Testing & Quality Assurance" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3>Automated Testing &amp; Quality Assurance</h3>
+            <p>Integrating end-to-end testing frameworks, regression suites, and continuous code quality scans into deployment pipelines for flawless releases.</p>
+            <span style="font-size: 0.8rem; color: #38bdf8; font-weight: 600; text-transform: uppercase;">Jest &bull; Cypress &bull; SonarQube &bull; CI/CD</span>
+          </div>
+        </div>
+
+
         <div class="portfolio-card">
           <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="Cloud Infrastructure Network" loading="lazy">
           <div class="portfolio-card-content">
@@ -890,6 +1535,18 @@
             <span style="font-size: 0.8rem; color: #38bdf8; font-weight: 600; text-transform: uppercase;">Kubernetes &bull; Terraform &bull; GCP</span>
           </div>
         </div>
+
+        <!-- Portfolio Item 1 -->
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="Cybersecurity & Zero-Trust Architecture" loading="lazy">
+          <div class="portfolio-card-content">
+            <h3>Cybersecurity &amp; Zero-Trust Architecture</h3>
+            <p>Deploying multi-layer security perimeters, encryption standards, and continuous threat monitoring to safeguard mission-critical data assets.</p>
+            <a href="#contact" class="btn-n btn-n--black" style="padding: 8px 16px; font-size: 0.85rem; background: linear-gradient(135deg, #0061ff, #38bdf8);">Secure Your Infrastructure</a>
+          </div>
+        </div>
+
+
 
         <div class="portfolio-card">
           <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80" alt="SaaS UI & Mobile Platform" loading="lazy">
@@ -1165,6 +1822,82 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- Fortune 500 Partners Section (15 Partners Total) -->
+  <section id="partners" class="partners-section">
+    <div class="container-n">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Global Collaborations</span>
+        <h2 class="title-h2" style="color: #fff; margin-top: 12px; margin-bottom: 8px;">Trusted by Fortune 500 Partners</h2>
+        <p style="color: #94a3b8; max-width: 650px; margin: 0 auto; font-size: 1.05rem;">
+          Empowering industry-leading enterprises with robust IT infrastructure, cloud solutions, and custom software architectures.
+        </p>
+      </div>
+
+      <div class="partners-grid">
+        <!-- Partner 1: Microsoft -->
+        <div class="partner-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft Logo">
+          <p class="partner-name" style="color: #00a4ef;"></p>
+        </div>
+
+        <!-- Partner 2: Amazon -->
+        <div class="partner-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
+          <p class="partner-name" style="color: #ff9900;"></p>
+        </div>
+
+        <!-- Partner 3: Google Cloud -->
+        <div class="partner-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo">
+          <p class="partner-name" style="color: #4285f4;"></p>
+        </div>
+
+        <!-- Partner 4: IBM -->
+        <div class="partner-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM Logo">
+          <p class="partner-name" style="color: #0530ad;"></p>
+        </div>
+
+        <!-- Partner 6: Cisco -->
+        <div class="partner-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" alt="Cisco Logo">
+          <p class="partner-name" style="color: #1ba0d7;"></p>
+        </div>
+
+        <!-- Partner 7: Oracle -->
+        <div class="partner-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle Logo">
+          <p class="partner-name" style="color: #f80000;"></p>
+        </div>
+
+        <!-- Partner 8: Salesforce -->
+        <div class="partner-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce Logo">
+          <p class="partner-name" style="color: #00a1e0;"></p>
+        </div>
+
+        <!-- Partner 9: HP -->
+        <div class="partner-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/HP_logo_2012.svg" alt="HP Logo">
+          <p class="partner-name" style="color: #0096d6;"></p>
+        </div>
+
+        <!-- Partner 10: Dell -->
+        <div class="partner-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Dell_logo_2016.svg" alt="Dell Logo">
+          <p class="partner-name" style="color: #007db8;"></p>
+        </div>
+
+        <!-- Partner 12: Apple (New) -->
+        <div class="partner-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo" style="filter: invert(1);">
+          <p class="partner-name" style="color: #f5f5f7;"></p>
+        </div>
+
+      </div>
     </div>
   </section>
 
