@@ -57,7 +57,7 @@
     }
     /* Typography & Hierarchy */
     .title { color: #1e1d28; font-size: 3.75rem; line-height: 1.17; margin: 0 0 1.5rem; }
-    .title-h1 { font-family: Signifier, serif; font-size: 32px; font-weight: 300; line-height: 1.25; margin: 0; }
+    .title-h1 { font-family: Signifier, serif; font-size: 25px; font-weight: 300; line-height: 1.25; margin: 0; }
     .title-h2 { font-size: 24px; font-weight: 300; line-height: 32px; margin: 0 0 32px; }
 
     /* Responsive Styles */
@@ -206,10 +206,6 @@
       color: #fff;
     }
 
-    .payment-bg {
-      background: linear-gradient(135deg, rgba(238, 242, 255, 0.95), rgba(224, 242, 254, 0.95)), url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-      color: #1e1d28;
-    }
 
     .stats-bg {
       background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(88, 28, 135, 0.9)), url('https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
@@ -418,53 +414,7 @@
       margin-bottom: 16px;
     }
 
-    /* Portal File Dropzone */
-    .dropzone {
-      border: 2px dashed #3b82f6;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 36px 24px;
-      text-align: center;
-      cursor: pointer;
-      transition: background 0.2s ease, border-color 0.2s ease;
-    }
-    .dropzone:hover, .dropzone.dragover {
-      background: rgba(59, 130, 246, 0.1);
-      border-color: #60a5fa;
-    }
 
-    /* Payment Portal Tab Switching & Form Inputs */
-    .payment-tab-btn {
-      flex: 1;
-      padding: 12px;
-      background: #f1f5f9;
-      border: 1px solid #cbd5e1;
-      color: #475569;
-      font-weight: 600;
-      cursor: pointer;
-      border-radius: 8px;
-      transition: all 0.2s ease;
-    }
-    .payment-tab-btn.active {
-      background: #0061ff;
-      color: #fff;
-      border-color: #0061ff;
-    }
-    .payment-input {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      background: rgba(255, 255, 255, 0.9);
-      color: #1e1d28;
-      transition: border-color 0.2s ease;
-    }
-    .payment-input:focus {
-      outline: none;
-      border-color: #0061ff;
-      box-shadow: 0 0 0 3px rgba(0, 97, 255, 0.15);
-    }
 
     /* Interactive Accordion (FAQ) */
     .faq-accordion {
@@ -600,8 +550,6 @@
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#portfolio">Showcase</a></li>
-        <li><a href="#portal">Document Vault</a></li>
-        <li><a href="#payment-portal">Payments</a></li>
         <li><a href="#stats">Impact</a></li>
         <li><a href="#testimonials">Clients</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -682,23 +630,24 @@
 
         <!-- Slide 7 -->
         <div class="hero-slide">
-          <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=1400&q=80" alt="AI Integration">
+          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1400&q=80" alt="Cloud Architecture">
           <div class="hero-slide-overlay">
-            <span class="hero-badge-tag">Artificial Intelligence &bull;</span>
-            <h2 class="hero-slide-title">AI Integration &amp; Enterprise Scalability</h2>
-            <p class="hero-slide-desc">Reaching unprecedented technological heights with intelligent automation and machine learning models.</p>
+            <span class="hero-badge-tag">Core Competency &bull; 06/20</span>
+            <h2 class="hero-slide-title">Enterprise Cloud Architecture</h2>
+            <p class="hero-slide-desc">Designing scalable, highly available, and secure multi-region cloud environments tailored for modern operations.</p>
           </div>
         </div>
 
         <!-- Slide 8 -->
         <div class="hero-slide">
-          <img src="https://images.unsplash.com/photo-1508873696983-2df5c920ac1c?auto=format&fit=crop&w=1400&q=80" alt="Uptime Guarantees">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80" alt="Managed IT Support">
           <div class="hero-slide-overlay">
-            <span class="hero-badge-tag">IT Support &bull;</span>
-            <h2 class="hero-slide-title">Precision Timing &amp; SLA Guarantees</h2>
-            <p class="hero-slide-desc">Continuous uptime and reliable technical support delivered by EquivoraSoftware experts.</p>
+            <span class="hero-badge-tag">Core Competency &bull; 09/20</span>
+            <h2 class="hero-slide-title">Managed IT Support Services</h2>
+            <p class="hero-slide-desc">Delivering proactive help desk support, system monitoring, and on-site IT operations for Connecticut businesses.</p>
           </div>
         </div>
+
 
         <!-- Slide 9 -->
         <div class="hero-slide">
@@ -752,13 +701,14 @@
 
         <!-- Slide 14 -->
         <div class="hero-slide">
-          <img src="https://images.unsplash.com/photo-1616844345436-5d63f034076e?auto=format&fit=crop&w=1400&q=80" alt="Next-Gen Development">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80" alt="Data Analytics & BI">
           <div class="hero-slide-overlay">
-            <span class="hero-badge-tag">Next-Gen Tech &bull;</span>
-            <h2 class="hero-slide-title">Forward-Looking Cloud Solutions</h2>
-            <p class="hero-slide-desc">Next-generation software development engineered to keep your enterprise ahead of the competition.</p>
+            <span class="hero-badge-tag"></span>
+            <h2 class="hero-slide-title">Data Analytics &amp; Business Intelligence</h2>
+            <p class="hero-slide-desc">Transforming complex operational telemetry into real-time executive dashboards and actionable insights.</p>
           </div>
         </div>
+
 
         <!-- Slide 15 -->
         <div class="hero-slide">
@@ -872,13 +822,14 @@
 
         <!-- Slide 26 -->
         <div class="hero-slide">
-          <img src="https://images.unsplash.com/photo-1426604966848-d7adacbd02bff?auto=format&fit=crop&w=1400&q=80" alt="Scalable Cloud">
+          <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1400&q=80" alt="Disaster Recovery">
           <div class="hero-slide-overlay">
-            <span class="hero-badge-tag">Infrastructure &bull; </span>
-            <h2 class="hero-slide-title">Scalable Cloud Infrastructure</h2>
-            <p class="hero-slide-desc">Advanced cloud systems designed by EquivoraSoftware to conquer your toughest technical challenges.</p>
+            <span class="hero-badge-tag">Core Competency &bull; 15/20</span>
+            <h2 class="hero-slide-title">Disaster Recovery &amp; Backup Solutions</h2>
+            <p class="hero-slide-desc">Architecting immutable backup systems and automated failover plans to guarantee zero data loss during outages.</p>
           </div>
         </div>
+
 
         <!-- Slide 27 -->
         <div class="hero-slide">
@@ -955,7 +906,7 @@
           <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80" alt="Full-Stack Development">
           <div class="hero-slide-overlay">
             <span class="hero-badge-tag">Professional Services &bull;</span>
-            <h2 class="hero-slide-title">Full-Stack Custom Development</h2>
+            <h2 class="hero-slide-title">Full-Stack Development</h2>
             <p class="hero-slide-desc">Robust, scalable, and secure software solutions engineered for modern enterprises.</p>
           </div>
         </div>
@@ -1020,6 +971,35 @@
           </div>
         </div>
 
+        <!--  Slide 41 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?auto=format&fit=crop&w=1400&q=80" alt="Legacy Modernization">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Core Competency &bull; 13/20</span>
+            <h2 class="hero-slide-title">Legacy System Modernization</h2>
+            <p class="hero-slide-desc">Refactoring outdated monolithic codebases and databases into modern cloud-native architectures without downtime.</p>
+          </div>
+        </div>
+
+        <!-- Slide 42 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80" alt="DevOps & CI/CD Pipelines">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag"></span>
+            <h2 class="hero-slide-title">DevOps &amp; Automated CI/CD Pipelines</h2>
+            <p class="hero-slide-desc">Accelerating release cycles with automated containerization, Kubernetes orchestration, and robust testing suites.</p>
+          </div>
+        </div>
+
+        <!-- Slide 43 -->
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1400&q=80" alt="Milestone Reviews & Go-Live">
+          <div class="hero-slide-overlay">
+            <span class="hero-badge-tag">Seamless Deployment &bull; 04/20</span>
+            <h2 class="hero-slide-title">Partner with EquivoraSoftware</h2>
+            <p class="hero-slide-desc">Experience flawless execution, rigorous code reviews, and structured milestone demos leading up to secure production deployment.</p>
+          </div>
+        </div>
       </div>
 
       <!-- Slider Dots Indicator (No Slide Numbers) -->
@@ -1560,158 +1540,6 @@
     </div>
   </section>
 
-  <!-- Client Portal Section: Secure Document Vault -->
-  <section id="portal" class="portal-bg" style="padding: 80px 0;">
-    <div class="container-n" style="max-width: 800px;">
-      <div style="text-align: center; margin-bottom: 40px;">
-        <span style="background: rgba(59, 130, 246, 0.2); color: #60a5fa; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Client Vault</span>
-        <h2 class="title-h2" style="color: #fff; margin-top: 16px;">Confidential Document Submission</h2>
-        <p style="color: #94a3b8; margin: 0 auto; max-width: 600px;">Upload project specifications, NDAs, or technical requirements. Files are encrypted with 256-bit AES before transit and storage.</p>
-      </div>
-
-      <div style="background: rgba(30, 41, 59, 0.7); border: 1px solid #334155; border-radius: 16px; padding: 32px; backdrop-filter: blur(12px);">
-        <form id="portalUploadForm">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
-            <div>
-              <label style="display: block; color: #cbd5e1; font-size: 0.875rem; font-weight: 600; margin-bottom: 6px;">Client / Organization Name</label>
-              <input type="text" placeholder="Acme Corp" required style="width: 100%; padding: 12px; background: rgba(15, 23, 42, 0.6); border: 1px solid #475569; border-radius: 8px; color: #fff; font-size: 0.95rem;">
-            </div>
-            <div>
-              <label style="display: block; color: #cbd5e1; font-size: 0.875rem; font-weight: 600; margin-bottom: 6px;">Project Access Key / Email</label>
-              <input type="email" placeholder="client@company.com" required style="width: 100%; padding: 12px; background: rgba(15, 23, 42, 0.6); border: 1px solid #475569; border-radius: 8px; color: #fff; font-size: 0.95rem;">
-            </div>
-          </div>
-
-          <div class="dropzone" id="dropzone">
-            <svg style="width: 48px; height: 48px; fill: none; stroke: #3b82f6; stroke-width: 2; margin-bottom: 12px;" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
-            </svg>
-            <p style="margin: 0; color: #f1f5f9; font-size: 1.05rem; font-weight: 600;">Drag &amp; drop confidential files here</p>
-            <p style="margin: 6px 0 16px; color: #64748b; font-size: 0.875rem;">Supports PDF, DOCX, ZIP, CAD, and Architecture diagrams (Up to 200MB)</p>
-            <input type="file" id="portalFileInput" multiple style="display: none;">
-            <button type="button" onclick="document.getElementById('portalFileInput').click();" class="btn-n btn-n--white" style="font-size: 13px; padding: 10px 20px;">Browse Files</button>
-          </div>
-
-          <div id="fileListContainer" style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px;"></div>
-
-          <div style="margin-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-            <div style="display: flex; align-items: center; gap: 8px; color: #10b981; font-size: 0.85rem;">
-              <svg style="width: 18px; height: 18px; fill: currentColor;" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-              </svg>
-              <span>AES-256 Encrypted Transmissions &bull; SOC2 Certified Storage</span>
-            </div>
-            <button type="submit" class="btn-n btn-n--black" style="padding: 14px 28px; background: #3b82f6;">Upload Securely</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Payment Portal -->
-  <section id="payment-portal" class="payment-bg" style="padding: 80px 0;">
-    <div class="container-n" style="max-width: 900px;">
-      <div style="text-align: center; margin-bottom: 40px;">
-        <span style="background: rgba(0, 97, 255, 0.1); color: #0061ff; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Financial Portal</span>
-        <h2 class="title-h2" style="color: #1e1d28; margin-top: 16px;">Make an Online Payment</h2>
-        <p style="color: #475569; margin: 0 auto; max-width: 600px;">Pay retainers, project milestones, or outstanding invoices securely via Card or ACH Transfer.</p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(238, 242, 255, 0.95)); padding: 36px; border-radius: 16px; border: 1px solid #cbd5e1; box-shadow: 0 10px 30px rgba(0,0,0,0.08);" id="paymentGrid">
-        <div>
-          <h3 style="margin-top: 0; font-size: 1.25rem; color: #0f172a;">Invoice Information</h3>
-          <form id="invoiceLookupForm" onsubmit="event.preventDefault(); handleInvoiceSearch();" style="display: flex; flex-direction: column; gap: 16px;">
-            <div>
-              <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Invoice / Retainer ID</label>
-              <input type="text" id="invoiceId" placeholder="INV-2026-8891" required class="payment-input">
-            </div>
-            <div>
-              <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Client Email</label>
-              <input type="email" placeholder="billing@company.com" required class="payment-input">
-            </div>
-            <div>
-              <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Payment Amount ($ USD)</label>
-              <input type="number" id="payAmount" placeholder="5000.00" min="1" step="0.01" required class="payment-input" oninput="updatePaymentTotal()">
-            </div>
-          </form>
-
-          <div style="margin-top: 24px; padding: 16px; background: rgba(241, 245, 249, 0.8); border-radius: 8px; border: 1px solid #cbd5e1;">
-            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #64748b; margin-bottom: 8px;">
-              <span>Subtotal:</span>
-              <span id="summarySubtotal">$0.00</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #64748b; margin-bottom: 8px;">
-              <span>Processing Fee (0%):</span>
-              <span>$0.00</span>
-            </div>
-            <hr style="border: none; border-top: 1px dashed #cbd5e1; margin: 12px 0;">
-            <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 1.1rem; color: #0f172a;">
-              <span>Total Due:</span>
-              <span id="summaryTotal" style="color: #0061ff;">$0.00</span>
-            </div>
-          </div>
-        </div>
-
-        <div style="border-left: 1px solid #cbd5e1; padding-left: 24px;">
-          <h3 style="margin-top: 0; font-size: 1.25rem; color: #0f172a;">Payment Method</h3>
-
-          <div style="display: flex; gap: 8px; margin-bottom: 20px;">
-            <button type="button" class="payment-tab-btn active" id="tabCard" onclick="switchPaymentMethod('card')">Credit / Debit</button>
-            <button type="button" class="payment-tab-btn" id="tabAch" onclick="switchPaymentMethod('ach')">ACH Bank Transfer</button>
-          </div>
-
-          <form id="paymentProcessForm" onsubmit="handlePaymentSubmit(event)">
-            <div id="cardFields" style="display: flex; flex-direction: column; gap: 14px;">
-              <div>
-                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Name on Card</label>
-                <input type="text" placeholder="John Doe" required class="payment-input">
-              </div>
-              <div>
-                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Card Number</label>
-                <input type="text" placeholder="4532 &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 8892" maxlength="19" required class="payment-input">
-              </div>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                <div>
-                  <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Expiry Date</label>
-                  <input type="text" placeholder="MM/YY" maxlength="5" required class="payment-input">
-                </div>
-                <div>
-                  <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">CVC / CWW</label>
-                  <input type="text" placeholder="123" maxlength="4" required class="payment-input">
-                </div>
-              </div>
-            </div>
-
-            <div id="achFields" style="display: none; flex-direction: column; gap: 14px;">
-              <div>
-                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Bank Account Name</label>
-                <input type="text" placeholder="Acme Corporate Checking" class="payment-input">
-              </div>
-              <div>
-                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Routing Number (ABA)</label>
-                <input type="text" placeholder="021000021" maxlength="9" class="payment-input">
-              </div>
-              <div>
-                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #475569; margin-bottom: 6px;">Account Number</label>
-                <input type="text" placeholder="1234567890" class="payment-input">
-              </div>
-            </div>
-
-            <div style="margin-top: 24px;">
-              <button type="submit" class="btn-n btn-n--black" style="width: 100%; justify-content: center; padding: 16px; background: #10b981;">
-                <span>🔒 Pay Securely Now</span>
-              </button>
-            </div>
-
-            <div style="text-align: center; margin-top: 12px; font-size: 0.75rem; color: #64748b;">
-              PCI-DSS Level 1 Compliant &bull; 256-Bit SSL Encryption
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Key Metrics / Stats -->
   <section id="stats" class="stats-bg" style="padding: 80px 0; color: #fff;">
     <div class="container-n" style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 32px; text-align: center;">
@@ -2057,46 +1885,6 @@
     }
   });
 
-  // Payment Portal Handlers
-  function updatePaymentTotal() {
-    const val = parseFloat(document.getElementById("payAmount").value) || 0;
-    const formatted = "$" + val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    document.getElementById("summarySubtotal").textContent = formatted;
-    document.getElementById("summaryTotal").textContent = formatted;
-  }
-
-  function switchPaymentMethod(type) {
-    const cardTab = document.getElementById("tabCard");
-    const achTab = document.getElementById("tabAch");
-    const cardFields = document.getElementById("cardFields");
-    const achFields = document.getElementById("achFields");
-
-    if (type === 'card') {
-      cardTab.classList.add("active");
-      achTab.classList.remove("active");
-      cardFields.style.display = "flex";
-      achFields.style.display = "none";
-    } else {
-      achTab.classList.add("active");
-      cardTab.classList.remove("active");
-      achFields.style.display = "flex";
-      cardFields.style.display = "none";
-    }
-  }
-
-  function handlePaymentSubmit(e) {
-    e.preventDefault();
-    const amount = document.getElementById("payAmount").value;
-    const invId = document.getElementById("invoiceId").value || "INV-2026";
-    if (!amount || parseFloat(amount) <= 0) {
-      alert("Please enter a valid payment amount.");
-      return;
-    }
-    alert(`Payment of $${amount} for ${invId} processed successfully! A confirmation receipt has been sent to your email.`);
-    document.getElementById("paymentProcessForm").reset();
-    document.getElementById("invoiceLookupForm").reset();
-    updatePaymentTotal();
-  }
 </script>
 
 </body>
