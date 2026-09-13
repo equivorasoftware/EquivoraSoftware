@@ -13,6 +13,9 @@
   <title>IT Services Connecticut | Software Development, AI, Platform Solutions & Support | EquivoraSoftware</title>
   <meta name="description" content="Connecticut-based IT services and software development company offering IT support services, software solutions, artificial intelligence, machine learning, data analytics, automation services, platform services, migration services, disaster recovery, backup services, application support, and IT infrastructure solutions.">
 
+  <!-- FontAwesome for Colorful Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <!-- Gravity Forms Initialization standard hook handler -->
   <script>
     window.gform = window.gform || {
@@ -87,6 +90,80 @@
     .nav-links { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; align-items: center; }
     .nav-links a { color: #f8fafc; text-decoration: none; font-size: 14px; font-weight: 500; cursor: pointer; transition: color 0.2s ease; }
     .nav-links a:hover { color: #38bdf8; }
+
+
+    /* Top Bar Utility Styles */
+    .top-utility-bar {
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      padding: 8px 0;
+    }
+    .top-utility-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .contact-info-group {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .contact-info-group a, .contact-info-group span {
+      color: #cbd5e1;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .contact-info-group a:hover {
+      color: #38bdf8;
+    }
+    .social-icons-group {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+    .social-icons-group a {
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+    .social-icons-group a:hover {
+      transform: scale(1.2);
+    }
+
+    /* Footer Styles */
+    .site-footer {
+      background: #090d16;
+      color: #94a3b8;
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
 
     /* Background Sections */
     .hero-bg {
@@ -533,6 +610,28 @@
   </style>
 </head>
 <body>
+
+<!-- TOP UTILITY BAR (Added on top of Home, About, Services, Showcase Impact, and Contact Us tabs) -->
+<div class="top-utility-bar">
+  <div class="container-n top-utility-inner">
+    <!-- Contact Details -->
+    <div class="contact-info-group">
+      <a href="mailto:info@equivorasoftware.com"><i class="fa-solid fa-envelope" style="color: #38bdf8;"></i> info@equivorasoftware.com</a>
+      <a href="tel:5714842138"><i class="fa-solid fa-phone" style="color: #38bdf8;"></i> 571-484-2138</a>
+    </div>
+    <!-- Connect With Us: Social Media Icons with Original Brand Colors -->
+    <div class="social-icons-group">
+      <span style="font-size: 0.8rem; font-weight: 600; color: #94a3b8; margin-right: 4px;">Connect with Us:</span>
+      <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin" style="color: #0a66c2;"></i></a>
+      <a href="https://x.com" target="_blank" aria-label="X" title="X"><i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i></a>
+      <a href="https://spotify.com" target="_blank" aria-label="Spotify" title="Spotify"><i class="fa-brands fa-spotify" style="color: #1db954;"></i></a>
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook" style="color: #1877f2;"></i></a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram" style="color: #e1306c;"></i></a>
+      <a href="https://pinterest.com" target="_blank" aria-label="Pinterest" title="Pinterest"><i class="fa-brands fa-pinterest" style="color: #e60023;"></i></a>
+      <a href="https://twitter.com" target="_blank" aria-label="Twitter" title="Twitter"><i class="fa-brands fa-twitter" style="color: #1da1f2;"></i></a>
+    </div>
+  </div>
+</div>
 
 <!-- Header & Navigation -->
 <header class="header" style="border-bottom: 1px solid rgba(255, 255, 255, 0.1); position: sticky; top: 0; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); z-index: 100;">
@@ -1781,6 +1880,52 @@
     </div>
   </section>
 </main>
+
+<!-- FOOTER (Added at the bottom of the website) -->
+<footer class="site-footer">
+  <div class="container-n">
+    <div class="footer-grid">
+      <!-- Footer Col 1: About -->
+      <div class="footer-col">
+        <h4>EquivoraSoftware</h4>
+        <p style="font-size: 0.9rem; line-height: 1.5; color: #94a3b8;">
+          Connecticut's premier software engineering and IT solutions provider delivering cutting-edge AI, custom applications, and robust cloud infrastructure.
+        </p>
+      </div>
+
+      <!-- Footer Col 2: Contact Info -->
+      <div class="footer-col" id="contact us">
+        <h4>Contact Us</h4>
+        <p style="margin: 0 0 10px; font-size: 0.9rem;">
+          <i class="fa-solid fa-envelope" style="color: #38bdf8; margin-right: 8px;"></i>
+          <a href="mailto:info@equivorasoftware.com" style="color: #94a3b8; text-decoration: none;">info@equivorasoftware.com</a>
+        </p>
+        <p style="margin: 0; font-size: 0.9rem;">
+          <i class="fa-solid fa-phone" style="color: #38bdf8; margin-right: 8px;"></i>
+          <a href="tel:5714842138" style="color: #94a3b8; text-decoration: none;">571-484-2138</a>
+        </p>
+      </div>
+
+      <!-- Footer Col 3: Connect With Us (Social Icons) -->
+      <div class="footer-col">
+        <h4>Connect with Us</h4>
+        <div class="social-icons-group" style="margin-top: 10px;">
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin" style="color: #0a66c2;"></i></a>
+          <a href="https://x.com" target="_blank" aria-label="X" title="X"><i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i></a>
+          <a href="https://spotify.com" target="_blank" aria-label="Spotify" title="Spotify"><i class="fa-brands fa-spotify" style="color: #1db954;"></i></a>
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook" style="color: #1877f2;"></i></a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram" style="color: #e1306c;"></i></a>
+          <a href="https://pinterest.com" target="_blank" aria-label="Pinterest" title="Pinterest"><i class="fa-brands fa-pinterest" style="color: #e60023;"></i></a>
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter" title="Twitter"><i class="fa-brands fa-twitter" style="color: #1da1f2;"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 EquivoraSoftware. All rights reserved.
+    </div>
+  </div>
+</footer>
 
 <footer style="background-color: #0f172a; color: #94a3b8; padding: 40px 0; border-top: 1px solid #1e293b;">
   <div class="container-n" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
