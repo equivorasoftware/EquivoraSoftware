@@ -2000,6 +2000,8 @@
       });
     });
 
+
+
     // FAQ Accordion Toggle
     const faqHeaders = document.querySelectorAll(".faq-header");
     faqHeaders.forEach(header => {
@@ -2076,6 +2078,49 @@
     }
   });
 
+
+</script>
+
+<!-- JavaScript for Mobile Hamburger Toggle & Hero Carousel -->
+<script>
+  /* <![CDATA[ */
+  document.addEventListener("DOMContentLoaded", () => {
+    // 1. Mobile Hamburger Menu Toggle Logic
+    const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+    const navContainer = document.getElementById("navContainer");
+
+    if (mobileMenuToggle && navContainer) {
+      mobileMenuToggle.addEventListener("click", () => {
+        navContainer.classList.toggle("active");
+
+        // Toggle icon between bars and close (X)
+        const icon = mobileMenuToggle.querySelector("i");
+        if (icon) {
+          if (navContainer.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+          } else {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+          }
+        }
+      });
+
+      // Close mobile menu when clicking any nav link
+      const navLinksItems = navContainer.querySelectorAll(".nav-links a");
+      navLinksItems.forEach(link => {
+        link.addEventListener("click", () => {
+          navContainer.classList.remove("active");
+          const icon = mobileMenuToggle.querySelector("i");
+          if (icon) {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+          }
+        });
+      });
+    }
+  });
+  /* ]]> */
 </script>
 
 </body>
