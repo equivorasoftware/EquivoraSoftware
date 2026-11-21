@@ -700,6 +700,75 @@
       text-align: center;
     }
 
+    /* Footer Styles */
+    .site-footer {
+      background: #090d16;
+      color: #94a3b8;
+      padding: 64px 0 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 36px;
+      align-items: start;
+      margin-bottom: 44px;
+    }
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 1.05rem;
+      margin: 0 0 18px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .footer-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .footer-links a:hover {
+      color: #38bdf8;
+      transform: translateX(3px);
+    }
+    .footer-contact-item {
+      margin: 0 0 12px;
+      font-size: 0.92rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #94a3b8;
+    }
+    .footer-contact-item i { margin-top: 4px; flex-shrink: 0; }
+    .footer-contact-item a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-contact-item a:hover { color: #38bdf8; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
 
   </style>
 </head>
@@ -2175,62 +2244,123 @@
   </section>
 </main>
 
-<!-- FOOTER (Added at the bottom of the website) -->
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="container-n">
     <div class="footer-grid">
-      <!-- Footer Col 1: About -->
       <div class="footer-col">
-        <h4>EquivoraSoftware</h4>
-        <p style="font-size: 0.9rem; line-height: 1.5; color: #94a3b8;">
-          Connecticut's premier software engineering and IT solutions provider delivering cutting-edge AI, custom applications, and robust cloud infrastructure.
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; color: #38bdf8;"></i> Home</a></li>
+          <li><a href="#about"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; color: #38bdf8;"></i> About EquivoraSoftware</a></li>
+          <li><a href="#services"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; color: #38bdf8;"></i> IT &amp; Software Services</a></li>
+          <li><a href="#portfolio"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; color: #38bdf8;"></i> Solution Showcase</a></li>
+          <li><a href="#stats"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; color: #38bdf8;"></i> Impact &amp; Metrics</a></li>
+          <li><a href="#partners"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; color: #38bdf8;"></i> Technology Ecosystem</a></li>
+          <li><a href="#faq"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; color: #38bdf8;"></i> Frequently Asked Questions</a></li>
+          <li><a href="#contact"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; color: #38bdf8;"></i> Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Core Capabilities</h4>
+        <ul class="footer-links">
+          <li><a href="#services"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; color: #38bdf8;"></i> IT Services &amp; Support</a></li>
+          <li><a href="#services"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; color: #38bdf8;"></i> Cloud &amp; Infrastructure</a></li>
+          <li><a href="#services"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; color: #38bdf8;"></i> Custom Software Development</a></li>
+          <li><a href="#services"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; color: #38bdf8;"></i> Platform &amp; API Solutions</a></li>
+          <li><a href="#services"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; color: #38bdf8;"></i> AI, ML &amp; Data Analytics</a></li>
+          <li><a href="#services"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; color: #38bdf8;"></i> Automation &amp; Backup</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col" id="footer-contact">
+        <h4>Connecticut Office</h4>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: #94a3b8; margin: 0 0 14px;">
+          Serving Stafford Springs, Hartford, New Haven, Stamford, and businesses across Connecticut.
+        </p>
+        <p class="footer-contact-item">
+          <i class="fa-solid fa-building" style="color: #38bdf8;"></i>
+          <span>4 Hillcrest Drive, Stafford Springs, CT 06076</span>
+        </p>
+        <p class="footer-contact-item">
+          <i class="fa-solid fa-envelope" style="color: #38bdf8;"></i>
+          <a href="mailto:info@equivorasoftware.com">info@equivorasoftware.com</a>
+        </p>
+        <p class="footer-contact-item">
+          <i class="fa-solid fa-phone" style="color: #38bdf8;"></i>
+          <a href="tel:+15714842138">571-484-2138</a>
         </p>
       </div>
 
-      <!-- Footer Col 2: Contact Info -->
-      <div class="footer-col" id="contact us">
-        <h4>Contact Us</h4>
-        <p style="margin: 0 0 10px; font-size: 0.9rem;">
-          <i class="fa-solid fa-envelope" style="color: #38bdf8; margin-right: 8px;"></i>
-          <a href="mailto:info@equivorasoftware.com" style="color: #94a3b8; text-decoration: none;">info@equivorasoftware.com</a>
-        </p>
-        <p style="margin: 0; font-size: 0.9rem;">
-          <i class="fa-solid fa-phone" style="color: #38bdf8; margin-right: 8px;"></i>
-          <a href="tel:5714842138" style="color: #94a3b8; text-decoration: none;">571-484-2138</a>
-        </p>
-      </div>
-
-      <!-- Footer Col 3: Connect With Us (Social Icons) -->
       <div class="footer-col">
         <h4>Connect with Us</h4>
-        <div class="social-icons-group" style="margin-top: 10px;">
-          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin" style="color: #0a66c2;"></i></a>
-          <a href="https://x.com" target="_blank" aria-label="X" title="X"><i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i></a>
-          <a href="https://spotify.com" target="_blank" aria-label="Spotify" title="Spotify"><i class="fa-brands fa-spotify" style="color: #1db954;"></i></a>
-          <a href="https://facebook.com" target="_blank" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook" style="color: #1877f2;"></i></a>
-          <a href="https://instagram.com" target="_blank" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram" style="color: #e1306c;"></i></a>
-          <a href="https://pinterest.com" target="_blank" aria-label="Pinterest" title="Pinterest"><i class="fa-brands fa-pinterest" style="color: #e60023;"></i></a>
-          <a href="https://twitter.com" target="_blank" aria-label="Twitter" title="Twitter"><i class="fa-brands fa-twitter" style="color: #1da1f2;"></i></a>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: #94a3b8; margin: 0 0 14px;">
+          Follow EquivoraSoftware for engineering updates, case studies, and technology insights.
+        </p>
+        <div class="social-icons-group">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin" style="color: #0a66c2;"></i></a>
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X" title="X"><i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i></a>
+          <a href="https://spotify.com" target="_blank" rel="noopener noreferrer" aria-label="Spotify" title="Spotify"><i class="fa-brands fa-spotify" style="color: #1db954;"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook" style="color: #1877f2;"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram" style="color: #e1306c;"></i></a>
+          <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" title="Pinterest"><i class="fa-brands fa-pinterest" style="color: #e60023;"></i></a>
         </div>
       </div>
     </div>
 
     <div class="footer-bottom">
-      &copy; 2026 EquivoraSoftware. All rights reserved.
+      <span>&copy; 2026 EquivoraSoftware. All rights reserved.</span>
+      <span>Stafford Springs, Connecticut</span>
     </div>
   </div>
 </footer>
 
-<footer style="background-color: #0f172a; color: #94a3b8; padding: 40px 0; border-top: 1px solid #1e293b;">
-  <div class="container-n" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-    <p style="margin: 0; font-size: 14px;">&copy; 2026 EquivoraSoftware. All rights reserved. IT services and software solutions across Connecticut.</p>
-  </div>
-</footer>
-
-<!-- Interactive Dynamic Scripts -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // Service Cards "Learn More" Expandable Toggle
+    // Hero Carousel Logic
+    const slides = document.querySelectorAll(".hero-slide");
+    const dotsContainer = document.getElementById("sliderDots");
+    let currentSlide = 0;
+    let slideInterval;
+
+    if (slides.length > 0 && dotsContainer) {
+      slides.forEach((_, index) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.classList.add("slider-dot");
+        dot.setAttribute("aria-label", `Show slide ${index + 1}`);
+        if (index === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => {
+          goToSlide(index);
+          resetInterval();
+        });
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = document.querySelectorAll(".slider-dot");
+
+      function goToSlide(n) {
+        slides[currentSlide].classList.remove("active");
+        dots[currentSlide].classList.remove("active");
+        currentSlide = (n + slides.length) % slides.length;
+        slides[currentSlide].classList.add("active");
+        dots[currentSlide].classList.add("active");
+      }
+
+      function nextSlide() {
+        goToSlide(currentSlide + 1);
+      }
+
+      function resetInterval() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 5000);
+      }
+
+      slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    // Unified Service Cards Expandable Toggle
     const cardButtons = document.querySelectorAll(".service-card .toggle-btn");
     cardButtons.forEach(btn => {
       btn.addEventListener("click", () => {
@@ -2240,15 +2370,13 @@
 
         if (isExpanded) {
           card.classList.remove("expanded");
-          btnText.textContent = "Learn More";
+          if (btnText) btnText.textContent = "Learn More";
         } else {
           card.classList.add("expanded");
-          btnText.textContent = "Show Less";
+          if (btnText) btnText.textContent = "Show Less";
         }
       });
     });
-
-
 
     // FAQ Accordion Toggle
     const faqHeaders = document.querySelectorAll(".faq-header");
@@ -2267,81 +2395,13 @@
       });
     });
 
-    // Client Portal Dropzone JS
-    const dropzone = document.getElementById("dropzone");
-    const fileInput = document.getElementById("portalFileInput");
-    const fileListContainer = document.getElementById("fileListContainer");
-    const uploadForm = document.getElementById("portalUploadForm");
-
-    if (dropzone) {
-      ['dragenter', 'dragover'].forEach(eventName => {
-        dropzone.addEventListener(eventName, (e) => {
-          e.preventDefault();
-          dropzone.classList.add("dragover");
-        }, false);
-      });
-
-      ['dragleave', 'drop'].forEach(eventName => {
-        dropzone.addEventListener(eventName, (e) => {
-          e.preventDefault();
-          dropzone.classList.remove("dragover");
-        }, false);
-      });
-
-      dropzone.addEventListener("drop", (e) => {
-        const dt = e.dataTransfer;
-        const files = dt.files;
-        handleFiles(files);
-      });
-
-      fileInput.addEventListener("change", () => {
-        handleFiles(fileInput.files);
-      });
-    }
-
-    function handleFiles(files) {
-      fileListContainer.innerHTML = "";
-      Array.from(files).forEach(file => {
-        const fileRow = document.createElement("div");
-        fileRow.style.cssText = "display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.8); padding: 10px 14px; border-radius: 6px; font-size: 0.875rem; color: #cbd5e1; border: 1px solid #334155;";
-        fileRow.innerHTML = `
-          <span>📄 <strong>${file.name}</strong> (${(file.size / (1024*1024)).toFixed(2)} MB)</span>
-          <span style="color: #10b981;">Ready to encrypt</span>
-        `;
-        fileListContainer.appendChild(fileRow);
-      });
-    }
-
-    if (uploadForm) {
-      uploadForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        if (fileListContainer.children.length === 0 && fileInput.files.length === 0) {
-          alert("Please select or drop at least one file to upload.");
-          return;
-        }
-        alert("Encryption complete. Documents successfully uploaded into the secure client vault!");
-        uploadForm.reset();
-        fileListContainer.innerHTML = "";
-      });
-    }
-  });
-
-
-</script>
-
-<!-- JavaScript for Mobile Hamburger Toggle & Hero Carousel -->
-<script>
-  /* <![CDATA[ */
-  document.addEventListener("DOMContentLoaded", () => {
-    // 1. Mobile Hamburger Menu Toggle Logic
+    // Mobile Hamburger Menu Toggle
     const mobileMenuToggle = document.getElementById("mobileMenuToggle");
     const navContainer = document.getElementById("navContainer");
 
     if (mobileMenuToggle && navContainer) {
       mobileMenuToggle.addEventListener("click", () => {
         navContainer.classList.toggle("active");
-
-        // Toggle icon between bars and close (X)
         const icon = mobileMenuToggle.querySelector("i");
         if (icon) {
           if (navContainer.classList.contains("active")) {
@@ -2354,7 +2414,6 @@
         }
       });
 
-      // Close mobile menu when clicking any nav link
       const navLinksItems = navContainer.querySelectorAll(".nav-links a");
       navLinksItems.forEach(link => {
         link.addEventListener("click", () => {
@@ -2367,29 +2426,16 @@
         });
       });
     }
-  });
-  /* ]]> */
-</script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const exploreButtons = document.querySelectorAll('.explore-details-btn');
-
-    exploreButtons.forEach(button => {
-      button.addEventListener('click', (e) => {
+    // Contact Form Submission Feedback
+    const contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+      contactForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        const card = button.closest('.service-card');
-        const drawer = card.querySelector('.service-details-drawer');
-
-        if (drawer.style.display === 'none' || drawer.style.display === '') {
-          drawer.style.display = 'block';
-          button.innerHTML = 'Hide Details &larr;';
-        } else {
-          drawer.style.display = 'none';
-          button.innerHTML = 'Explore Details &rarr;';
-        }
+        alert("Message sent successfully!");
+        contactForm.reset();
       });
-    });
+    }
   });
 </script>
 </body>
